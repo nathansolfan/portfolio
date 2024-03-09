@@ -1,32 +1,32 @@
 import React, { useState } from "react";
 
-export default function Form() {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+export default function Form({ onSubmit }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    onSubmit(email, password);
+  };
 
   return (
-    <form action="">
-      <label htmlFor=""></label>
+    <form onSubmit={handleSubmit}>
+      <label>Email</label>
       <input
-        type="email"
-        id="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
+        type="text"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
       />
 
-      <label htmlFor=""></label>
+      <label>Password</label>
       <input
-        type="password"
-        id="password"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
+        type="text"
+        required
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
-
-      <button type="submit">Register</button>
+      <button type="submit">Submit</button>
     </form>
   );
 }
