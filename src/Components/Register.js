@@ -1,30 +1,39 @@
 import React from "react";
 import Form from "./Form";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
-  const handleRegistration = (email, password) => {
-    const userData = { email, password };
+  const navigate = useNavigate();
 
-    fetch("http://localhost:3001/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network respose was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("There has been a problem", error);
+  const handleRegistration = async (email, password) => {
+    try {
+      const response = await fetch("http://localhost:3001/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
       });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      // Assuming the server's response is plain text
+      const data = await response.text();
+      console.log(data);
+
+      // Navigate to another route upon successful registration
+      navigate("/some-route-after-registration");
+    } catch (error) {
+      console.error("There has been a problem", error);
+    }
   };
 
-  return <Form onSubmit={handleRegistration} />;
+  return (
+    <div>
+      <h2>Register</h2>
+      <Form onSubmit={handleRegistration} />
+    </div>
+  );
 }
