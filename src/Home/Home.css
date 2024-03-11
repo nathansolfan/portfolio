@@ -1,4 +1,5 @@
 
+
 /* Base Style */
 .home-container {
   text-align: center;
@@ -51,18 +52,23 @@
 
 /* Flex container */
 /* Flexbox container */
+/* Flexbox container */
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start; /* Change this to 'flex-start' to avoid stretching */
-  margin: 20px auto; /* Added top and bottom margin for spacing */
-  max-width: 60%; /* Match the width of .home-container or set to your preference */
-  gap: 20px; /* Adds space between items */
+  justify-content: space-between; /* This will put space between the two sets of items */
+  margin: 20px auto; /* Centers the container with margin on the top and bottom */
+  max-width: 960px; /* Adjust this width to control the space between the two sets */
 }
 
 /* Specific class for paragraphs in flex-container */
 .flex-item {
-  flex: 0 0 calc(50% - 20px); /* Adjust the percentage and subtract the gap */
-  margin: 10px; /* Optional: if you want space around items */
-}
+  flex: 0 0 calc(50% - 40px); /* This calculation assumes a gap of 20px on each side of the item */
+  margin: 20px; /* This will create a gap of 20px around each item */
+  border: 2px solid #333; /* Adds a solid border for visualization */
+  box-sizing: border-box; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;}
+
