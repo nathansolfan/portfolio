@@ -73,9 +73,16 @@ export default function Home() {
         className="home-container"
         style={{ backgroundColor: getBackgroundColor(), position: "relative" }}
       >
-        <h1 className="home-title">Homepage</h1>
+        <h1 className="home-title">What is to know about me?</h1>
         <p className="home-paragraph">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          I have a strong foundation in front-end and back-end development, with
+          a keen eye for creating responsive and visually appealing web designs.
+          My journey in the world of web development are hosted on GitHub. One
+          of my primary areas of focus is building web applications using React
+          progressing to NextJS and integrating them with robust databases,
+          particularly MongoDB or Postman Also PHP using MySQL which acts
+          similar to MongoDB. This allows me to create dynamic, data-driven
+          solutions that meet the unique needs of businesses and users alike.
         </p>
         {/* Draggable circle */}
         <div

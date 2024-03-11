@@ -3,9 +3,10 @@
 
 
 body, button, input, textarea {
+  background-color: rgb(155, 248, 253);
   font-family: 'Roboto', sans-serif; /* This applies the font family to all text */
   font-size: 18px; /* Sets a base font-size, you can adjust this as needed */
-  color: #333; /* Sets a base font color, adjust as needed */
+  color: #000000; /* Sets a base font color, adjust as needed */
 }
 
 h1, h2, h3, h4, h5, h6 {
