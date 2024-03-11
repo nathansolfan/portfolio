@@ -1,0 +1,30 @@
+/* Navbar.css */
+nav {
+    background-color: #333; /* Dark background for the navbar */
+    color: #fff; /* White text color */
+    padding: 10px; /* Some padding around the navbar */
+ 
+  }
+  
+  nav ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display list items in a row */
+    justify-content: center; /* Center the navigation links */
+  }
+  
+  nav ul li {
+    margin: 0 15px; /* Spacing between each navigation link */
+  }
+  
+  nav ul li a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #fff; /* White text color for links */
+    font-weight: bold; /* Make the navigation links bold */
+  }
+  
+  nav ul li a:hover {
+    color: #ddd; /* Light grey color on hover for some visual feedback */
+  }
+  

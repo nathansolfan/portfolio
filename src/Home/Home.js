@@ -67,27 +67,42 @@ export default function Home() {
   }, [isDragging]); // Re-run the effect only if isDragging changes
 
   return (
-    <div
-      ref={containerRef}
-      className="home-container"
-      style={{ backgroundColor: getBackgroundColor(), position: "relative" }}
-    >
-      <h1 className="home-title">Homepage</h1>
-      <p className="home-paragraph">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-      </p>
-      {/* Draggable circle */}
+    <div>
       <div
-        className="draggable-circle"
-        style={{
-          left: `${position.x}%`,
-          top: `${position.y}%`,
-          cursor: isDragging ? "grabbing" : "grab", // Changes cursor based on drag state
-        }}
-        onMouseDown={startDrag}
-      />
-
-      <div style={{ height: "100px" }}>{/* Additional content */}</div>
+        ref={containerRef}
+        className="home-container"
+        style={{ backgroundColor: getBackgroundColor(), position: "relative" }}
+      >
+        <h1 className="home-title">Homepage</h1>
+        <p className="home-paragraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        </p>
+        {/* Draggable circle */}
+        <div
+          className="draggable-circle"
+          style={{
+            left: `${position.x}%`,
+            top: `${position.y}%`,
+            cursor: isDragging ? "grabbing" : "grab", // Changes cursor based on drag state
+          }}
+          onMouseDown={startDrag}
+        />
+        <div style={{ height: "100px" }}>{/* Additional content */}</div>
+      </div>
+      <div className="flex-container">
+        <p className="flex-item">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit...
+        </p>
+        <p className="flex-item">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit...
+        </p>
+        <p className="flex-item">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit...
+        </p>
+        <p className="flex-item">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit...
+        </p>
+      </div>
     </div>
   );
 }

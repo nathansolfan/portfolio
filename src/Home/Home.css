@@ -1,9 +1,11 @@
 /* Base Style */
 .home-container {
-    text-align: center;
-    padding: 20px;
-    border-radius: 8px;
-  }
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 60%; /* or a specific pixel value like 600px */
+  margin: 0 auto; /* Centers the container */
+}
   
   .home-title {
     margin: 0;
@@ -44,3 +46,22 @@
     cursor: grab; /* Change cursor to 'grab' for better UX */
   }
   
+  /* Assuming .grid-container is a direct child of the body or main container that fills the screen */
+
+/* Flex container */
+/* Flexbox container */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start; /* Change this to 'flex-start' to avoid stretching */
+  margin: 20px auto; /* Added top and bottom margin for spacing */
+  max-width: 60%; /* Match the width of .home-container or set to your preference */
+  gap: 20px; /* Adds space between items */
+}
+
+/* Specific class for paragraphs in flex-container */
+.flex-item {
+  flex: 0 0 calc(50% - 20px); /* Adjust the percentage and subtract the gap */
+  margin: 10px; /* Optional: if you want space around items */
+}
