@@ -20,6 +20,7 @@
   .light-theme .home-paragraph,
   .light-theme .home-container p { /* Added this line to include all paragraphs */
     color: #000000; /* Darker text for light theme */
+    color: rgb(rgb(225, 175, 146), green, blue)
   }
   
   /* Dark Theme Style */
@@ -31,5 +32,15 @@
   .dark-theme .home-paragraph,
   .dark-theme .home-container p { /* Added this line to include all paragraphs */
     color: #000000; /* Light text for dark theme */
+  }
+  .draggable-circle {
+    width: 30px; /* Increased size */
+    height: 30px; /* Increased size */
+    background-color: #6a0dad; /* New color - a shade of purple */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Adjusted for centering */
+    cursor: grab; /* Change cursor to 'grab' for better UX */
   }
   

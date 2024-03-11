@@ -1,56 +1,93 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Home.css";
 
 export default function Home() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false); // State to toggle themes
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const containerRef = useRef(null);
 
-  // Function to toggle the theme
-  const toggleTheme = () => {
-    console.log("Current theme before toggle:", isDarkTheme ? "Dark" : "Light");
-    setIsDarkTheme(!isDarkTheme);
+  // Function to start the dragging process
+  const startDrag = (e) => {
+    setIsDragging(true);
+    e.preventDefault(); // Prevent default action (like text selection)
   };
 
+  const stopDrag = () => {
+    setIsDragging(false);
+  };
+
+  // Function to handle dragging
+  const handleDrag = (e) => {
+    if (!isDragging) return;
+
+    const container = containerRef.current;
+    const containerRect = container.getBoundingClientRect();
+    const dragX = Math.min(
+      Math.max(0, e.clientX - containerRect.left),
+      containerRect.width
+    );
+    const dragY = Math.min(
+      Math.max(0, e.clientY - containerRect.top),
+      containerRect.height
+    );
+
+    setPosition({
+      x: (dragX / containerRect.width) * 100,
+      y: (dragY / containerRect.height) * 100,
+    });
+  };
+
+  // Calculate the background color based on the horizontal position of the draggable circle
+  const getBackgroundColor = () => {
+    const startColor = { r: 225, g: 175, b: 145 }; // Pink
+    const endColor = { r: 135, g: 206, b: 235 }; // Sky Blue
+    const ratio = position.x / 100; // Use the horizontal position (x) to determine the color
+
+    const r = Math.round(startColor.r + (endColor.r - startColor.r) * ratio);
+    const g = Math.round(startColor.g + (endColor.g - startColor.g) * ratio);
+    const b = Math.round(startColor.b + (endColor.b - startColor.b) * ratio);
+
+    return `rgb(${r}, ${g}, ${b})`;
+  };
+
+  // Attach the event listeners for mouse move and mouse up
+  useEffect(() => {
+    const handleMouseMove = (e) => handleDrag(e);
+    const handleMouseUp = () => stopDrag();
+
+    if (isDragging) {
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isDragging]); // Re-run the effect only if isDragging changes
+
   return (
-    <div>
+    <div
+      ref={containerRef}
+      className="home-container"
+      style={{ backgroundColor: getBackgroundColor(), position: "relative" }}
+    >
+      <h1 className="home-title">Homepage</h1>
+      <p className="home-paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+      </p>
+      {/* Draggable circle */}
       <div
-        className={`home-container ${
-          isDarkTheme ? "dark-theme" : "light-theme"
-        }`}
-      >
-        <style>
-          {`
-        .home-container {
-          background-color: ${isDarkTheme ? "#8fd2ea" : "#d7ab4c"};
-        }
-      `}
-        </style>
-        <h1 className="home-title">Homepage</h1>
-        <p className="home-paragraph">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        </p>
-        <button onClick={toggleTheme}>Toggle Theme</button>{" "}
-        {/* Button to toggle theme */}
-      </div>
-      <div>
-        <p>
-          Eligendi, ipsam tempore nam sunt dolores neque, sequi accusamus saepe
-          porro, nesciunt quibusdam quia unde. Omnis neque reprehenderit nulla
-          laborum quod delectus Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Harum, optio aliquam omnis sit doloremque minus
-          veniam eaque earum, provident modi unde velit incidunt numquam quasi
-          rerum aliquid sequi ipsa repellat.
-        </p>
-      </div>
-      <div>
-        <p>
-          adipisicing elit. Harum, optio aliquam omnis sit doloremque minus
-          veniam eaque earum, provident modi unde velit incidunt numquam quasi
-          Eligendi, ipsam tempore nam sunt dolores neque, sequi accusamus saepe
-          porro, nesciunt quibusdam quia unde. Omnis neque reprehenderit nulla
-          laborum quod delectus Lorem ipsum dolor sit amet consectetur rerum
-          aliquid sequi ipsa repellat.
-        </p>
-      </div>
+        className="draggable-circle"
+        style={{
+          left: `${position.x}%`,
+          top: `${position.y}%`,
+          cursor: isDragging ? "grabbing" : "grab", // Changes cursor based on drag state
+        }}
+        onMouseDown={startDrag}
+      />
+
+      <div style={{ height: "100px" }}>{/* Additional content */}</div>
     </div>
   );
 }
