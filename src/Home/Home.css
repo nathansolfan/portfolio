@@ -1,74 +1,66 @@
-
-
 /* Base Style */
 .home-container {
   text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 60%; /* or a specific pixel value like 600px */
-  margin: 0 auto; /* Centers the container */
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 60%;
+  margin: 40px auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); /* Adds shadow for depth */
+  background-color: #ffffff; /* Light theme background */
 }
-  
-  .home-title {
-    margin: 0;
-    padding-bottom: 20px;
-  }
-  
-  .home-paragraph, .home-container p {
-    line-height: 1.6;
-  }
-  
-  /* Light Theme Style */
-  
-  .light-theme .home-title,
-  .light-theme .home-paragraph,
-  .light-theme .home-container p { /* Added this line to include all paragraphs */
-    color: #000000; /* Darker text for light theme */
-    color: rgb(rgb(225, 175, 146), green, blue)
-  }
-  
-  /* Dark Theme Style */
-  .dark-theme .home-container {
-    background-color: #b97878 !important; /* Adjusted dark theme background color */
-  }
-  
-  .dark-theme .home-title,
-  .dark-theme .home-paragraph,
-  .dark-theme .home-container p { /* Added this line to include all paragraphs */
-    color: #000000; /* Light text for dark theme */
-  }
-  .draggable-circle {
-    width: 30px; /* Increased size */
-    height: 30px; /* Increased size */
-    background-color: #6a0dad; /* New color - a shade of purple */
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%); /* Adjusted for centering */
-    cursor: grab; /* Change cursor to 'grab' for better UX */
-  }
-  
-  /* Assuming .grid-container is a direct child of the body or main container that fills the screen */
 
-/* Flex container */
-/* Flexbox container */
-/* Flexbox container */
+.home-title {
+  margin: 0;
+  padding-bottom: 30px;
+  font-size: 2.5rem; /* Larger title font size */
+  color: #333; /* Darker color for better contrast */
+}
+
+.home-paragraph {
+  font-size: 1.1rem; /* Slightly larger paragraph text */
+  color: #555; /* Soft color for reading */
+  line-height: 1.8; /* Increased line height for readability */
+}
+
+/* Draggable Circle */
+.draggable-circle {
+  width: 50px; /* Larger circle */
+  height: 50px;
+  background-color: #8e44ad; /* Deep purple color */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer; /* Pointer indicates it's interactive */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+/* Flex Container */
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* This will put space between the two sets of items */
-  margin: 20px auto; /* Centers the container with margin on the top and bottom */
-  max-width: 960px; /* Adjust this width to control the space between the two sets */
+  justify-content: space-around;
+  margin: 40px auto;
+  max-width: 80%; /* Increased width for a better layout */
 }
 
-/* Specific class for paragraphs in flex-container */
+/* Flex Items - Square Boxes */
 .flex-item {
-  flex: 0 0 calc(50% - 40px); /* This calculation assumes a gap of 20px on each side of the item */
-  margin: 20px; /* This will create a gap of 20px around each item */
-  border: 2px solid #333; /* Adds a solid border for visualization */
-  box-sizing: border-box; 
+  flex: 0 0 calc(50% - 40px); 
+  height: 200px; /* Fixed height to maintain aspect ratio for square boxes */
+  margin: 20px;
+  border: 2px solid #ddd; /* Lighter border color */
+  border-radius: 10px; /* Rounded corners for the boxes */
+  box-sizing: border-box;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;}
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  text-align: center;
+  background-color: #f7f7f7; /* Slightly off-white background for the boxes */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interactions */
+}
 
+.flex-item:hover {
+  transform: scale(1.05); /* Slightly scale up the box on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover for a 'lifting' effect */
+}

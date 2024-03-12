@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Home/Home";
+import Home from "./Home/HomeColor";
 
 import Register from "./Components/Register";
 import Navbar from "./Components/Navbar";
@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home2 />} />
           <Route path="/register" element={<Register />} />
-          {/* other routes */}
+          <Route path="/home" element={<Home />} />
         </Routes>
       </div>
     </Router>
