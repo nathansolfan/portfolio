@@ -83,7 +83,9 @@
   align-items: center; /* Center content vertically */
   text-align: left; /* Align text to the left */
   color: #000000; /* Text color for better visibility */
-  padding-left: 10%; /* Padding to push content from the left edge */
+  padding-left: 10%; /* Decrease padding to increase the blue line (background) */
+  padding-right: 10%; /* Padding to push content from the left edge */
+  font-size: 4rem;
 }
 
 .hero-section .content-overlay {
