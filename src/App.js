@@ -9,8 +9,6 @@ import Home2 from "./Home2/Home2";
 function App() {
   return (
     <Router>
-      {" "}
-      {/* Move Router to wrap all components that might use routing context */}
       <div>
         <Navbar />{" "}
         {/* Now Navbar and its children have access to routing context */}

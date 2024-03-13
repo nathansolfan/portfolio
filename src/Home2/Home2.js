@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImg from "../Images/background.webp";
+import backgroundImg from "../Images/bg.webp";
 import "../Home/Home.css";
 import Home from "../Home/HomeColor";
 
@@ -10,7 +10,7 @@ export default function Home2() {
         className="hero-section"
         style={{
           backgroundImage: `url(${backgroundImg})`,
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat", // Prevents the background from repeating
           backgroundAttachment: "fixed", // Keeps the background stationary
