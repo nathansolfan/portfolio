@@ -69,46 +69,41 @@
 }
 
 /* HERO SECTION */
-
-/* Home.css */
-
+/* HERO SECTION */
 .hero-section {
-  /* Existing styles */
+  background-image: url('../Images/img.jpg'); /* Adjust this path if necessary */
+  background-size: cover;
+  background-position: right center; /* Adjust the background to the right */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #000000; /* Change text color for better visibility against a likely dark background */
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center; /* Center content vertically */
+  text-align: left; /* Align text to the left */
+  color: #000000; /* Text color for better visibility */
+  padding-left: 10%; /* Padding to push content from the left edge */
 }
 
-.hero-section h2 {
-  font-family: Montserrat;
-  
-  font-size: 7rem; /* Larger font size for the heading */
-  margin-bottom: 1rem; /* Space between the heading and the paragraph */
-  font-weight: bold; /* Make the heading stand out */
+.hero-section .content-overlay {
+  max-width: 40%; /* Max width of the content area */
+  /* Remove margin-right and padding-right as they are no longer necessary */
 }
 
-.hero-section p {
-  font-size: 2.25rem; /* Slightly larger paragraph for readability */
-  max-width: 30%; /* Limit the width of the paragraph for better readability */
-  line-height: 1.5; /* Improve line spacing */
-}
-
-.hero-section button {
-  padding: 1rem 2rem; /* Larger button for better interaction */
-  font-size: 1.5rem; /* Button font size */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Slightly rounded corners */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
-  margin-top: 2rem; /* Space above the button */
-  background-color: #007bff; /* Primary button color */
-  color: #ffffff; /* Button text color */
-}
-
-.hero-section button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
-  transform: scale(1.05); /* Slightly enlarge the button on hover */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    justify-content: center; /* Center content on smaller screens */
+    padding-left: 5%; /* Smaller padding on smaller screens */
+  }
+  .hero-section .content-overlay {
+    max-width: 80%; /* Content takes more width on smaller screens */
+  }
+  .hero-section h2 {
+    font-size: 4rem; /* Smaller font size for smaller screens */
+  }
+  .hero-section p {
+    font-size: 1.5rem; /* Adjust paragraph font size for readability */
+  }
 }
