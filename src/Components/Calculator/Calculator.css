@@ -1,59 +1,72 @@
-.calculator {
+.calculator-box {
+    background-color: #f2f2f2; /* Light grey background */
+    padding: 30px; /* Increased spacing inside the box for a more open feel */
+    border-radius: 15px; /* Slightly larger rounded corners for the box */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow for more depth */
+    width: max-content; /* Box width adjusts to content */
+    margin: 20px auto; /* Center the calculator box */
+  }
+
+  .calculator {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
   }
-  
   .title {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    font-size: 24px; /* Larger title size */
+    color: #333; /* Darker color for better contrast */
+    font-weight: bold; /* Make title bolder */
   }
   
   .input-group {
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .input {
-    margin: 5px;
-    padding: 8px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
+    margin: 10px; /* Increased margin for better spacing */
+    padding: 10px 15px; /* Larger padding for a more tactile feel */
+    border: 1px solid #aaa; /* Subtler border */
+    border-radius: 5px; /* Rounded corners for inputs */
+    width: 200px; /* Fixed width for uniformity */
+    font-size: 16px; /* Larger font size for better readability */
   }
   
   .input-value {
     margin: 5px;
+    font-size: 16px; /* Match input font size */
+    color: #555; /* Darker color for better contrast */
   }
-  
-  .add-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+
+  .operator-button, .reset-button {
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px; /* Increased font size for readability */
+    margin: 5px; /* Closer spacing for a compact layout */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
   }
   
-  .add-button:hover {
-    background-color: #0056b3;
+  .operator-button {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .operator-button:hover, .reset-button:hover {
+    filter: brightness(85%); /* Darken button on hover for interactivity */
   }
   
   .result {
-    margin-top: 15px;
-    font-size: 20px;
+    margin-top: 20px;
+    font-size: 22px; /* Larger result display */
+    color: #333; /* Darker font for result for emphasis */
+    font-weight: bold; /* Bold result display */
   }
-
   .reset-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #dc3545; /* Red color for the reset button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #f8606f;
+    color: white; /* Ensure text is white for contrast */
+    margin-top: 15px; /* Separate reset button from operation buttons */
   }
-  
-  .reset-button:hover {
-    background-color: #c82333;
-  }
-  
