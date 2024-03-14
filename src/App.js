@@ -5,7 +5,7 @@ import Home from "./Home/HomeColor";
 import Register from "./Components/Register";
 import Navbar from "./Components/Navbar";
 import Home2 from "./Home2/Home2";
-import Calculator from "./Components/Calculator";
+import Calculator from "./Components/Calculator/Calculator";
 
 function App() {
   return (
