@@ -29,6 +29,12 @@ export default function Calculator() {
     }
   };
 
+  const reset = () => {
+    setInput(0);
+    setInput2(0);
+    setResult(null);
+  };
+
   return (
     <div className="calculator">
       <h2 className="title">Calculator</h2>
@@ -63,6 +69,10 @@ export default function Calculator() {
           /
         </button>
       </div>
+      <button className="reset-button" onClick={reset}>
+        Reset
+      </button>
+
       <p className="result">Result: {result}</p>
     </div>
   );
