@@ -5,6 +5,10 @@
   },
   {
     "email": "nathansolfan@hotmail.com",
+    "password": "12345"
+  },
+  {
+    "email": "nathansolfan@gmail.com",
     "password": "123"
   }
 ]

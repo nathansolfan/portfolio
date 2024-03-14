@@ -6,6 +6,8 @@ import Register from "./Components/Register";
 import Navbar from "./Components/Navbar";
 import Home2 from "./Home2/Home2";
 import Calculator from "./Components/Calculator/Calculator";
+import Login from "./Components/Login";
+import Logout from "./Components/Logout";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home2 />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/home" element={<Home />} />
           <Route path="/calculator" element={<Calculator />} />
         </Routes>

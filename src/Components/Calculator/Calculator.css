@@ -9,7 +9,7 @@
     transition: box-shadow 0.5s ease-in-out; /* Smooth transition for shadow */
   }
   .calculator-box:hover {
-    box-shadow: inset 4px 4px 4px 8px rgba(0, 0, 0, 0.1), 0 12px 20px rgba(0, 0, 0, 0.2); /* Intensify outer shadow on hover for more depth */
+    box-shadow: inset 4px 4px 2px 2px rgba(0, 0, 0, 0.1), 5px 9px 20px 9px rgba(0, 0, 0, 0.45);/* Intensify outer shadow on hover for more depth */
   }
 
   .calculator {

@@ -12,7 +12,15 @@ export default function Navbar() {
         <li>
           <Link to="/register">Register</Link> {/* Link to the Register page */}
         </li>
-        {/* You can add more navigation links here */}
+        <li>
+          <Link to="/calculator">Calculator</Link>
+        </li>
+        <li>
+          <Link to="/login">Loginhi</Link>
+        </li>
+        <li>
+          <Link to="/logout">Logout</Link>
+        </li>
       </ul>
     </nav>
   );
