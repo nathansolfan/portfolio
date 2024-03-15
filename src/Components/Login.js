@@ -1,7 +1,9 @@
 import React from "react";
 import Form from "./Form";
+import { redirect, useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
   const handleLogin = async (email, password) => {
     try {
       const response = await fetch("http://localhost:3001/api/login", {
@@ -15,6 +17,7 @@ export default function Login() {
       if (response.ok) {
         console.log("Login successful");
         // Redirect or handle login success here
+        navigate("/Ticktacktoe");
       } else {
         const errorMessage = await response.text(); // Or response.json() for JSON response
         console.error("Login failed:", errorMessage);

@@ -18,10 +18,9 @@ export default function Form({ onSubmit }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-
       <label>Password</label>
       <input
-        type="text"
+        type="password" // Changed to 'password' to hide input
         required
         value={password}
         onChange={(e) => setPassword(e.target.value)}

@@ -21,6 +21,9 @@ export default function Navbar() {
         <li>
           <Link to="/logout">Logout</Link>
         </li>
+        <li>
+          <Link to="/ticktacktoe">Game</Link>
+        </li>
       </ul>
     </nav>
   );

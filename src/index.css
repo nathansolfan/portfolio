@@ -1,6 +1,16 @@
 /* In your CSS file */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+:root {
+  --font-primary: 'Roboto', sans-serif;
+  --color-primary: #333;
+  --color-secondary: #555;
+  --background-light: #f7f7f7;
+  --background-dark: #333;
+  --text-light: #ffffff;
+  --text-dark: #000000;
+  --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
 
 body, button, input, textarea {
   background-color: rgb(155, 248, 253);

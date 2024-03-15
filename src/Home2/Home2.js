@@ -1,6 +1,8 @@
 import React from "react";
 import "../Home/Home.css";
 import Home from "../Home/HomeColor";
+import Calculator from "../Components/Calculator/Calculator";
+import TicTacToe from "../Components/Ticktacktoe/Ticktacktoe";
 
 export default function Home2() {
   return (
@@ -14,6 +16,8 @@ export default function Home2() {
       </div>
       <div>
         <Home />
+        <Calculator />
+        <TicTacToe />
       </div>
     </div>
   );
