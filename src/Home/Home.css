@@ -47,25 +47,31 @@
   max-width: 80%; /* Increased width for a better layout */
 }
 
-/* Flex Items - Square Boxes */
+/* Flex Container */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px; /* This replaces margin on flex-items for spacing and is more consistent */
+  margin: 40px auto;
+  max-width: 80%; /* Keep your layout width */
+}
+
+/* Flex Items - More Square Boxes */
 .flex-item {
-  flex: 0 0 calc(50% - 40px); 
-  height: 200px; /* Fixed height to maintain aspect ratio for square boxes */
-  margin: 20px;
-  border: 2px solid #ddd; /* Lighter border color */
-  border-radius: 10px; /* Rounded corners for the boxes */
+  flex: 1 1 calc(33% - 40px); /* Three items per row with the gap included */
+  margin: 20px; /* This will be replaced by gap */
+  aspect-ratio: 1; /* This ensures the item is always square */
+  max-width: calc(33% - 40px); /* Maximum width */
+  border: 2px solid #ddd; /* Adjusted for visual balance */
+  border-radius: 10px; /* Adjusted for visual balance */
   box-sizing: border-box;
   display: flex;
   align-items: center; /* Center text vertically */
   justify-content: center; /* Center text horizontally */
   text-align: center;
-  background-color: #f7f7f7; /* Slightly off-white background for the boxes */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interactions */
-}
-
-.flex-item:hover {
-  transform: scale(1.05); /* Slightly scale up the box on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover for a 'lifting' effect */
+  background-color: #f7f7f7; /* Slightly off-white background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 /* HERO SECTION */
