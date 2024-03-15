@@ -38,47 +38,69 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
 
-/* Flex Container */
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 25px; /* This is the total space between items */
+  padding: 15px;
   margin: 40px auto;
-  max-width: 80%; /* Increased width for a better layout */
+  max-width: 80%;
 }
 
-/* Flex Container */
-.flex-container {
+.flex-item {    
+  width: 250px;
+  height: 250px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px; /* This replaces margin on flex-items for spacing and is more consistent */
-  margin: 40px auto;
-  max-width: 80%; /* Keep your layout width */
-}
-
-/* Flex Items - More Square Boxes */
-.flex-item {
-  flex: 1 1 calc(33% - 40px); /* Three items per row with the gap included */
-  margin: 20px; /* This will be replaced by gap */
-  aspect-ratio: 1; /* This ensures the item is always square */
-  max-width: calc(33% - 40px); /* Maximum width */
-  border: 2px solid #ddd; /* Adjusted for visual balance */
-  border-radius: 10px; /* Adjusted for visual balance */
-  box-sizing: border-box;
-  display: flex;
-  align-items: center; /* Center text vertically */
-  justify-content: center; /* Center text horizontally */
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  background-color: #f7f7f7; /* Slightly off-white background */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  align-items: center;
+  background-color: var(--background-light);
+  border: 2px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* HERO SECTION */
+.flex-item-title {
+  font-size: 1.2rem; /* Larger size for titles */
+  margin-bottom: 10px; /* Space between title and paragraph */
+}
+
+.flex-item p {
+  margin: 0; /* Reset paragraph margin for consistency */
+}
+
+.flex-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+@media (max-width: 768px) {
+  .flex-item {
+    flex-basis: calc(50% - 40px); /* This stays the same, as it's already set for two items per row */
+    max-width: calc(50% - 40px); /* Ensure maximum width is also 50% minus any margins/gaps */
+  }
+}
+
+@media (max-width: 480px) {
+  .flex-item {
+    flex-basis: calc(100% - 40px); /* One item per row on very small screens */
+    max-width: calc(100% - 40px);
+  }
+}
+
+
+.flex-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
 /* HERO SECTION */
 .hero-section {
   background-image: url('../Images/img.jpg'); /* Adjust this path if necessary */
-  background-size: cover;
+  background-size: contain;
+  /* background-size: auto auto; */
   background-position: right center; /* Adjust the background to the right */
   background-repeat: no-repeat;
   background-attachment: fixed;
