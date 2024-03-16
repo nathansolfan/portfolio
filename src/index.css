@@ -13,11 +13,20 @@
   --shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-body{
-  padding: 0px 400px 0 400px;
-}
+
 button:hover {
   background-color: #ff0000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* This will take at least the full viewport height */
+  background-color: var(--background-primary);
+  font-family: var(--font-primary);
 }
 
 body, button, input, textarea {
