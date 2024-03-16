@@ -40,42 +40,28 @@
 
 .flex-container {
   display: flex;
+  /* row by default - column/vertical */
+  flex-direction: row;
+  /* items on main axis - default - horizontal*/
+  justify-content: space-evenly;
+  /* items cross axis */
+  align-items: baseline;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px; /* This is the total space between items */
-  padding: 15px;
-  margin: 40px auto;
-  max-width: 80%;
+  /* only works on wrap */
+  align-content: flex-start;
+  gap: 1em;
+  
+  
+
+  
+
 }
 
-.flex-item {    
-  flex: 0 0 calc(35% - 25px); /* Adjust the flex-basis to account for the gap */
-  height: 250px; /* Keep height fixed if you want, or you can remove it to control height with padding */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: var(--background-light);
-  border: 2px solid #ddd;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 20px; /* Control height through padding */
+.flex-item {
+  background-color: rgb(202, 202, 242);
+
 }
 
-
-.flex-item-title {
-  font-size: 1.2rem; /* Larger size for titles */
-  margin-bottom: 10px; /* Space between title and paragraph */
-}
-
-.flex-item p {
-  margin: 0; /* Reset paragraph margin for consistency */
-}
-
-.flex-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
 
 
 @media (max-width: 768px) {
@@ -140,4 +126,4 @@
   }
 }
 
-https://www.youtube.com/watch?v=phWxA89Dy94
+/* https://www.youtube.com/watch?v=phWxA89Dy94 */
