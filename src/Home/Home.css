@@ -49,17 +49,19 @@
 }
 
 .flex-item {    
-  width: 250px;
-  height: 250px;
+  flex: 0 0 calc(35% - 25px); /* Adjust the flex-basis to account for the gap */
+  height: 250px; /* Keep height fixed if you want, or you can remove it to control height with padding */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
   align-items: center;
+  text-align: center;
   background-color: var(--background-light);
   border: 2px solid #ddd;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px; /* Control height through padding */
 }
+
 
 .flex-item-title {
   font-size: 1.2rem; /* Larger size for titles */
