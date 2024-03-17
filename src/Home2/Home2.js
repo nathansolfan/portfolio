@@ -19,7 +19,20 @@ export default function Home2() {
         <Home />
         <Calculator />
         <div className="card">
-          <img src={image} alt="" className="img1" />
+          <img src={image} alt="" />
+          <svg>
+            <defs>
+              <filter id="noise">
+                <feTurbulence
+                  baseFrequency="0.7,0.8"
+                  seed="0"
+                  type="fractalNoise"
+                  result="static"
+                />
+                <feDisplacementMap in2="SouceGraphic" in="static" scale="20" />
+              </filter>
+            </defs>
+          </svg>
         </div>
         <TicTacToe />
       </div>

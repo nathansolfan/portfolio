@@ -59,21 +59,7 @@ function App() {
             left: `${cursorPos.x}px`,
             top: `${cursorPos.y}px`,
           }}
-        >
-          <svg>
-            <defs>
-              <filter id="noise">
-                <feTurbulence
-                  baseFrequency="0.7,0.8"
-                  seed="0"
-                  type="fractalNoise"
-                  result="static"
-                />
-                <feDisplacementMap in="SourceGraphic" in2="static" scale="20" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
+        ></div>
         <Routes>
           <Route path="/" element={<Home2 />} />
           <Route path="/home" element={<Home />} />
