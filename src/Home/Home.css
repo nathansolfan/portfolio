@@ -130,10 +130,15 @@
   }
 }
 
+
+
 .card > img {
-  height: 100%;
-  width: 100%;
+  height: 600px;
+  width: 600px;
   object-fit: cover;
+  overflow: hidden;
+  filter: url(#noise);
+
 }
 
 @keyframes pulse {
@@ -146,7 +151,7 @@
 }
 
 .img1:hover {
-  animation: pulse 1s ; /* Run the pulse animation for 1 second and repeat infinitely while hovered */
+  animation: pulse 800ms ease-in-out ; /* Run the pulse animation for 1 second and repeat infinitely while hovered */
 }
 
 /* https://www.youtube.com/watch?v=phWxA89Dy94 */
