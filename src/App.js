@@ -13,10 +13,34 @@ import Ticktacktoe from "./Components/Ticktacktoe/Ticktacktoe";
 
 function App() {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
+  const cursorSize = 200; // Size of the cursor ball
 
   useEffect(() => {
     const handleMouseMove = (event) => {
       setCursorPos({ x: event.clientX, y: event.clientY });
+
+      // Elements that could change color when hovered by the cursor ball
+      const hoverElements = document.querySelectorAll(".hover-sensitive");
+
+      hoverElements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const elCenter = {
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2,
+        };
+
+        const distance = Math.sqrt(
+          Math.pow(elCenter.x - event.clientX, 2) +
+            Math.pow(elCenter.y - event.clientY, 2)
+        );
+
+        if (distance < cursorSize / 2) {
+          // Check if within the cursor ball area
+          el.style.backgroundColor = "rgba(255, 0, 0, 0.5)"; // Change color
+        } else {
+          el.style.backgroundColor = ""; // Reset color
+        }
+      });
     };
     window.addEventListener("mousemove", handleMouseMove);
 
@@ -28,8 +52,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />{" "}
-        {/* Now Navbar and its children have access to routing context */}
+        <Navbar />
         <div
           className="cursor-ball"
           style={{

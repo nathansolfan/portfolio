@@ -3,6 +3,7 @@ import "../Home/Home.css";
 import Home from "../Home/HomeColor";
 import Calculator from "../Components/Calculator/Calculator";
 import TicTacToe from "../Components/Ticktacktoe/Ticktacktoe";
+import image from "../Images/background.webp";
 
 export default function Home2() {
   return (
@@ -17,6 +18,9 @@ export default function Home2() {
       <div>
         <Home />
         <Calculator />
+        <div className="card">
+          <img src={image} alt="" className="img1" />
+        </div>
         <TicTacToe />
       </div>
     </div>

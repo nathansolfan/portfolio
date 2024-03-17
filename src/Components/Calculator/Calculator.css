@@ -1,3 +1,5 @@
+
+
 .calculator-box {  
     background-color: #f2f2f2; /* Light grey background */
     padding: 30px; /* Increased spacing inside the box for a more open feel */
@@ -74,4 +76,8 @@
     background-color: #f8606f;
     color: white; /* Ensure text is white for contrast */
     margin-top: 15px; /* Separate reset button from operation buttons */
+  }
+
+  .pic-1 {
+    background-image: url('../../Images/img.jpg');
   }

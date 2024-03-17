@@ -130,4 +130,23 @@
   }
 }
 
+.card > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1); /* Image at normal size */
+  }
+  50% {
+    transform: scale(0.5); /* Image scales up to 108% of its size */
+  }
+}
+
+.img1:hover {
+  animation: pulse 1s ; /* Run the pulse animation for 1 second and repeat infinitely while hovered */
+}
+
 /* https://www.youtube.com/watch?v=phWxA89Dy94 */
