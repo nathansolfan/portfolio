@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./Home.css";
 
 export default function Home() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
