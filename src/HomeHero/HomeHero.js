@@ -14,6 +14,7 @@ export default function HomeNathan() {
           <h2>This is Nathan</h2>
           <p> Proficient in both front-end and back-end development</p>
           <button>Learn More</button>
+          <img src={image} alt="" />
         </div>
       </div>
       <div>
