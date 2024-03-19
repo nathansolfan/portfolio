@@ -1,160 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+/* Base styles */
 :root {
-  /* Font and color scheme */
-  --font-primary: 'Roboto', sans-serif;
-  --color-primary: #333; /* Dark gray for primary text and elements */
-  --color-secondary: #555; /* Lighter gray for secondary elements */
-  --background-primary: #edbe5a; /* Warm yellow for the primary background */
-  --background-light: #f7f7f7; /* Light gray for card backgrounds and such */
-  --background-dark: #333; /* Dark gray for contrasted backgrounds */
-  --text-light: #ffffff; /* White for text on dark backgrounds */
-  --text-dark: #000000; /* Black for text on light backgrounds */
-
-  /* Box shadows for depth */
-  --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.2);
-
-  /* Hover state colors for interactive elements */
-  --hover-light: rgba(255, 255, 255, 0.3); /* Light overlay for light elements */
-  --hover-dark: rgba(0, 0, 0, 0.15); /* Dark overlay for dark elements */
+  --font-size-base: 16px;
+  --padding-base: 20px;
+  --padding-card: 20px;
+  --flex-gap: 20px;
+  /* ... other variables ... */
 }
 
+/* Media queries for tablet devices */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 14px; /* Smaller font size for tablets */
+    --padding-base: 15px; /* Smaller padding */
+    --padding-card: 15px;
+    --flex-gap: 15px;
+    /* ... other redefined variables for tablets ... */
+  }
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 480px) {
+  :root {
+    --font-size-base: 12px; /* Even smaller font size for mobile */
+    --padding-base: 10px; /* Smaller padding for mobile */
+    --padding-card: 10px;
+    --flex-gap: 10px;
+    /* ... other redefined variables for mobile ... */
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Remove extra space below the image */
+}
+
+/* Use the CSS variables in your selectors */
 body {
-  /* General body styles */
-  margin: 0;
-  padding: 0;
-  background-color: var(--background-primary);
-  font-family: var(--font-primary);
-  color: var(--text-dark);
-  line-height: 1.6; /* Improved line spacing for readability */
+  font-size: var(--font-size-base);
+  padding: var(--padding-base);
 }
 
-button, .button-like {
-  /* General button styles */
-  display: inline-block;
-  background-color: var(--color-primary);
-  color: var(--text-light);
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none; /* For anchor tags styled as buttons */
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-button:hover, .button-like:hover {
-  background-color: var(--hover-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-heavy);
-}
-
-.App {
-  /* Container for app content */
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
-.cursor-ball {
-  /* Custom cursor */
-  position: fixed;
-  z-index: 10000; /* Ensure it's above everything */
-  pointer-events: none; /* Allows interaction with elements underneath */
-}
-
-a {
-  /* Anchor tag styles */
-  color: var(--color-primary);
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--hover-light);
-}
-
-.content-overlay {
-  /* Overlay for content sections */
-  background: var(--overlay-color);
-  padding: var(--overlay-padding);
-  border-radius: 10px;
-  box-shadow: var(--shadow-light);
-  transition: background-color 0.3s ease;
-}
 
 .flex-container {
-  /* Container for flex items */
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Spacing between flex items */
-  justify-content: center; /* Center items horizontally */
-  padding: 20px;
-}
-
-.flex-item {
-  /* Individual flex items */
-  background-color: var(--background-light);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: var(--shadow-light);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.flex-item:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-heavy);
+  gap: var(--flex-gap);
 }
 
 .card {
-  /* Card component */
-  overflow: hidden; /* Hide overflow to maintain rounded corners */
-  border-radius: 10px;
-  box-shadow: var(--shadow-light);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-heavy);
-}
-
-.card img {
-  /* Images inside cards */
-  width: 100%;
-  height: auto;
-  transition: filter 0.3s ease;
-}
-
-.card img:hover {
-  filter: brightness(0.9);
-}
-
-/* DONATE */
-
-.donate-container {
-  text-align: center;
-  padding: 2rem;
-  margin: 2rem;
-  background-color: #f7f7f7; /* Light grey background */
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.donate-container h2 {
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.donate-container p {
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-.donate-form input[type="image"] {
-  transition: transform 0.2s ease-in-out;
-}
-
-.donate-form input[type="image"]:hover {
-  transform: scale(2);
+  padding: var(--padding-card);
 }
