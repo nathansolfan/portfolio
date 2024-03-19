@@ -9,6 +9,7 @@ import Calculator from "./Components/Calculator/Calculator";
 import Login from "./Components/Login";
 import Logout from "./Components/Logout";
 import Ticktacktoe from "./Components/Ticktacktoe/Ticktacktoe";
+import Donate from "./Components/Donate";
 
 function App() {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
@@ -67,6 +68,7 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/calculator" element={<Calculator />} />
           <Route path="/Ticktacktoe" element={<Ticktacktoe />} />
+          <Route path="/Donate" element={<Donate />} />
         </Routes>
       </div>
     </Router>

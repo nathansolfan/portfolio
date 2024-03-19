@@ -129,3 +129,32 @@ a:hover {
 .card img:hover {
   filter: brightness(0.9);
 }
+
+/* DONATE */
+
+.donate-container {
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #f7f7f7; /* Light grey background */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.donate-container h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.donate-container p {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.donate-form input[type="image"] {
+  transition: transform 0.2s ease-in-out;
+}
+
+.donate-form input[type="image"]:hover {
+  transform: scale(2);
+}

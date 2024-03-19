@@ -24,6 +24,9 @@ export default function Navbar() {
         <li>
           <Link to="/ticktacktoe">Game</Link>
         </li>
+        <li>
+          <Link to="/donate">Donate</Link>
+        </li>
       </ul>
     </nav>
   );
