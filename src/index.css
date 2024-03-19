@@ -1,68 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
+  /* Font and color scheme */
   --font-primary: 'Roboto', sans-serif;
-  --color-primary: #333;
-  --color-secondary: #555;
-  --background-primary: #edbe5a; /* Adjusted for a softer tone */
-  --background-light: #f7f7f7;
-  --background-dark: #333;
-  --text-light: #ffffff;
-  --text-dark: #000000;
-  --shadow-light: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-heavy: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  --hover-light: rgba(255, 255, 255, 0.3);
-  --hover-dark: rgba(0, 0, 0, 0.1);
+  --color-primary: #333; /* Dark gray for primary text and elements */
+  --color-secondary: #555; /* Lighter gray for secondary elements */
+  --background-primary: #edbe5a; /* Warm yellow for the primary background */
+  --background-light: #f7f7f7; /* Light gray for card backgrounds and such */
+  --background-dark: #333; /* Dark gray for contrasted backgrounds */
+  --text-light: #ffffff; /* White for text on dark backgrounds */
+  --text-dark: #000000; /* Black for text on light backgrounds */
+
+  /* Box shadows for depth */
+  --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+  /* Hover state colors for interactive elements */
+  --hover-light: rgba(255, 255, 255, 0.3); /* Light overlay for light elements */
+  --hover-dark: rgba(0, 0, 0, 0.15); /* Dark overlay for dark elements */
 }
 
 body {
+  /* General body styles */
   margin: 0;
   padding: 0;
   background-color: var(--background-primary);
   font-family: var(--font-primary);
-  display: flex;
-  flex-direction: column; /* Changed to column to stack content */
-  align-items: center;
-  min-height: 100vh;
   color: var(--text-dark);
+  line-height: 1.6; /* Improved line spacing for readability */
 }
 
-button {
-  padding: 10px 20px;
+button, .button-like {
+  /* General button styles */
+  display: inline-block;
   background-color: var(--color-primary);
   color: var(--text-light);
   border: none;
   border-radius: 5px;
+  padding: 10px 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  text-decoration: none; /* For anchor tags styled as buttons */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-button:hover {
+button:hover, .button-like:hover {
   background-color: var(--hover-dark);
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-heavy);
 }
 
 .App {
-  width: 90%; /* Limit the width for better content management */
-  max-width: 1200px; /* Maximum width to prevent over-expansion on large screens */
+  /* Container for app content */
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
 
 .cursor-ball {
+  /* Custom cursor */
   position: fixed;
-  width: 30px;
-  height: 30px;
-  background-color: var(--color-primary);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: difference; /* Creates an effect that inverts background colors */
-  z-index: 9999;
+  z-index: 10000; /* Ensure it's above everything */
+  pointer-events: none; /* Allows interaction with elements underneath */
 }
 
-/* Global Link Styles */
 a {
+  /* Anchor tag styles */
   color: var(--color-primary);
-  text-decoration: none;
   transition: color 0.3s ease;
 }
 
@@ -70,111 +74,58 @@ a:hover {
   color: var(--hover-light);
 }
 
-/* Hero Section Enhancements */
-.hero-section {
-  background-image: url('./Images/img.jpg'); /* Update the path as needed */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 80vh; /* Increased height for a more prominent hero section */
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative; /* For overlay positioning */
-  overflow: hidden;
-}
-
 .content-overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better text visibility */
+  /* Overlay for content sections */
+  background: var(--overlay-color);
+  padding: var(--overlay-padding);
   border-radius: 10px;
-  color: var(--text-light);
-  padding: 20px;
-  max-width: 600px; /* Limit the width for better text management */
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px; /* Spacing between elements */
+  box-shadow: var(--shadow-light);
+  transition: background-color 0.3s ease;
 }
 
-.content-overlay h2 {
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-.content-overlay p {
-  font-size: 1.2rem;
-  margin: 10px 0; /* Add some margin around the paragraph for spacing */
-}
-
-.content-overlay button {
-  padding: 10px 20px;
-  background-color: var(--color-primary);
-  color: var(--text-light);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.content-overlay button:hover {
-  background-color: var(--hover-dark);
-  transform: scale(1.05);
-}
-
-.content-overlay img {
-  width: 100%; /* Ensure the image fills the container */
-  max-width: 400px; /* Limit the image size */
-  border-radius: 10px; /* Optional: add rounded corners to the image */
-  margin-top: 20px; /* Space above the image */
-}
-
-/* Flex Container & Item Enhancements for Consistency */
 .flex-container {
+  /* Container for flex items */
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  gap: 20px; /* Spacing between flex items */
+  justify-content: center; /* Center items horizontally */
   padding: 20px;
 }
 
 .flex-item {
+  /* Individual flex items */
   background-color: var(--background-light);
-  box-shadow: var(--shadow-light);
-  border-radius: 10px;
   padding: 20px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flex-item:hover {
+  transform: scale(1.05);
   box-shadow: var(--shadow-heavy);
-  transform: translateY(-5px);
 }
 
-/* Adding SVG filter hover effect for all images */
-img:hover {
-  filter: brightness(0.8);
-}
-
-/* Card Style for Hover Effect */
 .card {
-  overflow: hidden; /* Ensures nothing spills out of card boundary */
-  position: relative; /* For absolute positioning inside */
-  box-shadow: var(--shadow-light);
+  /* Card component */
+  overflow: hidden; /* Hide overflow to maintain rounded corners */
   border-radius: 10px;
-  transition: box-shadow 0.3s ease;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
+  transform: scale(1.02);
   box-shadow: var(--shadow-heavy);
 }
 
 .card img {
+  /* Images inside cards */
   width: 100%;
-  transition: transform 0.5s ease;
+  height: auto;
+  transition: filter 0.3s ease;
 }
 
-.card:hover img {
-  transform: scale(1.1); /* Slightly enlarges the image */
+.card img:hover {
+  filter: brightness(0.9);
 }
