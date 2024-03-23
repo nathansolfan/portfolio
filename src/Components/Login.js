@@ -1,6 +1,6 @@
 import React from "react";
 import Form from "./Form";
-import { redirect, useNavigate } from "react-router-dom";
+import { navigate, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();

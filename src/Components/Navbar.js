@@ -27,6 +27,9 @@ export default function Navbar() {
         <li>
           <Link to="/donate">Donate</Link>
         </li>
+        <li>
+          <Link to="/Feedback">Feedback</Link>
+        </li>
       </ul>
     </nav>
   );
