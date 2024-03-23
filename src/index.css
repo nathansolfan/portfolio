@@ -49,3 +49,66 @@ body {
 .card {
   padding: var(--padding-card);
 }
+
+/* Home.css */
+.home-container {
+  text-align: center;
+  padding: var(--padding-base);
+  border-radius: 15px;
+  margin: var(--padding-base) auto;
+  box-shadow: var(--shadow-light);
+  background-color: var(--background-light); /* A lighter background */
+  transition: background-color 0.5s ease; /* Smooth transition for background color */
+  max-width: 800px; /* Max width for readability */
+  position: relative; /* For positioning the draggable circle */
+}
+
+.home-title {
+  font-size: 2rem; /* Large title font size */
+  color: var(--color-primary); /* Use primary color for titles */
+  margin-bottom: 1rem; /* Space below the title */
+}
+
+.home-paragraph {
+  font-size: 1rem; /* Paragraph text size */
+  color: var(--color-secondary); /* Use secondary color for paragraphs */
+  line-height: 1.6; /* Line height for readability */
+  padding: 0 var(--padding-base); /* Padding on the sides */
+}
+
+.draggable-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #8e44ad; /* Your specified purple color */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transitions for effects */
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--flex-gap);
+  padding: var(--padding-base);
+  justify-content: center; /* Center flex items */
+}
+
+.flex-item {
+  background-color: var(--background-primary); /* Warm yellow background */
+  padding: var(--padding-card);
+  margin: 10px; /* Margin for spacing between items */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: var(--shadow-light);
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for effects */
+  flex: 0 1 calc(33.333% - var(--flex-gap)); /* Three items per row */
+  text-align: left; /* Align text to the left */
+}
+
+.flex-item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: var(--shadow-heavy);
+}
+

@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "./Form";
 import { useNavigate } from "react-router-dom";
+import "../index.css";
 
 export default function Register() {
   const navigate = useNavigate();
