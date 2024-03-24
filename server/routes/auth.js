@@ -51,4 +51,8 @@ router.post("/login", (req, res) => {
   });
 });
 
+router.post("/feedback", (req, res) => {
+  const { name, email, message } = req.body;
+});
+
 module.exports = router;
