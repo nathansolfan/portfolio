@@ -4,6 +4,7 @@ const path = require("path");
 const router = express.Router();
 
 const contactsFilePath = path.join(__dirname, "../contacts.json");
+const feedbackFilePath = path.join(__dirname, "../feedback.json");
 
 router.post("/register", (req, res) => {
   const { email, password } = req.body;
@@ -53,6 +54,8 @@ router.post("/login", (req, res) => {
 
 router.post("/feedback", (req, res) => {
   const { name, email, message } = req.body;
+
+  fs.readFile();
 });
 
 module.exports = router;
