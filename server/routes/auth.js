@@ -62,9 +62,25 @@ router.post("/feedback", (req, res) => {
     }
 
     const feedbacks = JSON.parse(data.toString() || "[]");
-  });
+    feedbacks.push({
+      name,
+      email,
+      message,
+      submittedAt: new Date().toISOString(),
+    });
 
-  fs.readFile();
+    fs.writeFile(
+      feedbackFilePath,
+      JSON.stringify(feedbacks, null, 2),
+      (error) => {
+        if (error) {
+          console.error("Error writing to feedback file:", error);
+          return res.status(500).send("Server error");
+        }
+        res.send("Feedback submitted");
+      }
+    );
+  });
 });
 
 module.exports = router;
