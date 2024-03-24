@@ -13,8 +13,29 @@ function FeedbackForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Implement the submission logic here (e.g., sending data to a backend server)
-    console.log(feedback); // For now, just log the feedback object
+
+    try {
+      const response = await fetch("http://localhost:3001/api/feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(feedback),
+      });
+      if (!response.ok) {
+        throw new Error("Network response not okk");
+      }
+      const result = (await response.text()) || (await response.json());
+      console.log(result);
+      alert("Feedback submitted");
+      // RESET
+      setFeedback({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("There was a problem");
+      alert("Problem ");
+    }
+
+    console.log(feedback);
   };
 
   return (
