@@ -55,6 +55,15 @@ router.post("/login", (req, res) => {
 router.post("/feedback", (req, res) => {
   const { name, email, message } = req.body;
 
+  fs.readFile(feedbackFilePath, (error, data) => {
+    if (error) {
+      console.error("Error reading feedback file", error);
+      return res.status(500).send("Server error");
+    }
+
+    const feedbacks = JSON.parse(data.toString() || "[]");
+  });
+
   fs.readFile();
 });
 
