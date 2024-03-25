@@ -1,163 +1,135 @@
 /* Base styles */
 :root {
-  --font-size-base: 16px;
-  --padding-base: 20px;
-  --padding-card: 20px;
-  --flex-gap: 20px;
-  /* ... other variables ... */
+  /* Font and color scheme */
+  --font-primary: 'Roboto', sans-serif;
+  --color-primary: #4A4E69;  /* Updated for a modern look */
+  --color-secondary: #9A8C98; /* Softer secondary color */
+  --background-primary: #F2E9E4; /* Softer primary background */
+  --background-light: #C9ADA7;  /* Updated light background for contrast */
+  --background-dark: #22223B; /* Darker shade for depth */
+  --text-light: #ffffff;
+  --text-dark: #333333; /* Darker text for better readability */
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-heavy: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  /* Sizing and spacing */
+  --font-size-base: 1rem;
+  --padding-base: 1.5rem;
+  --padding-card: 1rem;
+  --flex-gap: 1.5rem;
+
+  /* Media query adjustments */
+  --font-size-small: 0.9rem;
+  --padding-small: 1rem;
+  --flex-gap-small: 1rem;
 }
 
-/* Media queries for tablet devices */
 @media (max-width: 768px) {
   :root {
-    --font-size-base: 14px; /* Smaller font size for tablets */
-    --padding-base: 15px; /* Smaller padding */
-    --padding-card: 15px;
-    --flex-gap: 15px;
-    /* ... other redefined variables for tablets ... */
+    --font-size-base: var(--font-size-small);
+    --padding-base: var(--padding-small);
+    --padding-card: var(--padding-small);
+    --flex-gap: var(--flex-gap-small);
   }
 }
 
-/* Media queries for mobile devices */
 @media (max-width: 480px) {
   :root {
-    --font-size-base: 12px; /* Even smaller font size for mobile */
-    --padding-base: 10px; /* Smaller padding for mobile */
-    --padding-card: 10px;
-    --flex-gap: 10px;
-    /* ... other redefined variables for mobile ... */
+    --font-size-base: 0.85rem;
+    --padding-base: 0.8rem;
+    --padding-card: 0.8rem;
+    --flex-gap: 0.8rem;
   }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block; /* Remove extra space below the image */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Use the CSS variables in your selectors */
+
 body {
   font-size: var(--font-size-base);
   padding: var(--padding-base);
+  background-color: var(--background-primary);
+  font-family: var(--font-primary);
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-
-.flex-container {
-  gap: var(--flex-gap);
-}
-
-.card {
-  padding: var(--padding-card);
-}
-
-/* Home.css */
-.home-container {
-  text-align: center;
-  padding: var(--padding-base);
-  border-radius: 15px;
-  margin: var(--padding-base) auto;
-  box-shadow: var(--shadow-light);
-  background-color: var(--background-light); /* A lighter background */
-  transition: background-color 0.5s ease; /* Smooth transition for background color */
-  max-width: 800px; /* Max width for readability */
-  position: relative; /* For positioning the draggable circle */
-}
-
-.home-title {
-  font-size: 2rem; /* Large title font size */
-  color: var(--color-primary); /* Use primary color for titles */
-  margin-bottom: 1rem; /* Space below the title */
-}
-
-.home-paragraph {
-  font-size: 1rem; /* Paragraph text size */
-  color: var(--color-secondary); /* Use secondary color for paragraphs */
-  line-height: 1.6; /* Line height for readability */
-  padding: 0 var(--padding-base); /* Padding on the sides */
-}
-
-.draggable-circle {
-  width: 50px;
-  height: 50px;
-  background-color: #0c080e; /* Your specified purple color */
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  cursor: progress;
-  box-shadow: var(--shadow-light);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transitions for effects */
-}
-
+/* Container and card styles */
 .flex-container {
   display: flex;
   flex-wrap: wrap;
   gap: var(--flex-gap);
-  padding: var(--padding-base);
-  justify-content: center; /* Center flex items */
+  justify-content: center;
 }
 
-.flex-item {
-  background-color: var(--background-primary); /* Warm yellow background */
+.card {
+  background-color: var(--background-light);
   padding: var(--padding-card);
-  margin: 10px; /* Margin for spacing between items */
-  border-radius: 100px; /* Rounded corners */
+  border-radius: 10px;
   box-shadow: var(--shadow-light);
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for effects */
-  flex: 0 1 calc(33.333% - var(--flex-gap)); /* Three items per row */
-  text-align: left; /* Align text to the left */
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-.flex-item:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
+.card:hover {
   box-shadow: var(--shadow-heavy);
+  transform: translateY(-5px);
 }
 
-/* FEEDBACK */
-
-.feedback-form {  
+/* Feedback Form */
+.feedback-form {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  padding: var(--padding-base);
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
   max-width: 500px;
   margin: auto;
-  padding: 20px;
-  background: #626060;
-  border-radius: 8px;
 }
 
 .feedback-form input, .feedback-form textarea {
-  width: 95%;
-  padding: 2%;
-  margin: 10px 0;
+  width: calc(100% - 2 * var(--padding-small));
+  padding: var(--padding-small);
+  margin-bottom: var(--padding-small);
   border-radius: 5px;
-  
-
   border: 1px solid #ccc;
+  background-color: #fff;
+  color: var(--text-dark);
 }
 
 .feedback-form button {
   width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
+  padding: var(--padding-small);
+  background-color: #4A4E69;
+  color: var(--text-light);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  opacity:0.5;
-  
+  transition: background-color 0.3s ease;
 }
 
 .feedback-form button:hover {
-  opacity: 1;
+  background-color: #9A8C98;
 }
 
+/* Donate Container */
 .donate-container {
- margin: 20%;
-text-align: center;
-
+  text-align: center;
+  padding: var(--padding-base);
+  margin: 2rem auto;
+  background-color: var(--background-light);
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
 }
 
-.donate-container .title-donate{
-font-style:oblique;
-font-weight: bold;
-margin-bottom: 100px;
-
-
+.title-donate {
+  font-style: oblique;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
 }
