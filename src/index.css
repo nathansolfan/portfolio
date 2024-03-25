@@ -79,11 +79,11 @@ body {
 .draggable-circle {
   width: 50px;
   height: 50px;
-  background-color: #8e44ad; /* Your specified purple color */
+  background-color: #0c080e; /* Your specified purple color */
   border-radius: 50%;
   position: absolute;
   top: 50%;
-  cursor: pointer;
+  cursor: progress;
   box-shadow: var(--shadow-light);
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transitions for effects */
 }
@@ -100,7 +100,7 @@ body {
   background-color: var(--background-primary); /* Warm yellow background */
   padding: var(--padding-card);
   margin: 10px; /* Margin for spacing between items */
-  border-radius: 15px; /* Rounded corners */
+  border-radius: 100px; /* Rounded corners */
   box-shadow: var(--shadow-light);
   transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for effects */
   flex: 0 1 calc(33.333% - var(--flex-gap)); /* Three items per row */
@@ -114,19 +114,21 @@ body {
 
 /* FEEDBACK */
 
-.feedback-form {
+.feedback-form {  
   max-width: 500px;
   margin: auto;
   padding: 20px;
-  background: #f2f2f2;
+  background: #626060;
   border-radius: 8px;
 }
 
 .feedback-form input, .feedback-form textarea {
-  width: 100%;
-  padding: 10px;
+  width: 95%;
+  padding: 2%;
   margin: 10px 0;
   border-radius: 5px;
+  
+
   border: 1px solid #ccc;
 }
 
@@ -138,4 +140,24 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  opacity:0.5;
+  
+}
+
+.feedback-form button:hover {
+  opacity: 1;
+}
+
+.donate-container {
+ margin: 20%;
+text-align: center;
+
+}
+
+.donate-container .title-donate{
+font-style:oblique;
+font-weight: bold;
+margin-bottom: 100px;
+
+
 }
