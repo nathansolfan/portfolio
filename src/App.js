@@ -11,6 +11,7 @@ import Logout from "./Components/Logout";
 import Ticktacktoe from "./Components/Ticktacktoe/Ticktacktoe";
 import Donate from "./Components/Donate";
 import FeedbackForm from "./Components/Feedback";
+import ColorPalete from "./Components/ColorPalete";
 
 function App() {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
@@ -71,6 +72,7 @@ function App() {
           <Route path="/Ticktacktoe" element={<Ticktacktoe />} />
           <Route path="/Donate" element={<Donate />} />
           <Route path="/Feedback" element={<FeedbackForm />} />
+          <Route path="/Color" element={<ColorPalete />} />
         </Routes>
       </div>
     </Router>

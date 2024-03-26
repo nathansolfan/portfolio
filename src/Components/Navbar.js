@@ -30,6 +30,9 @@ export default function Navbar() {
         <li>
           <Link to="/Feedback">Feedback</Link>
         </li>
+        <li>
+          <Link to="/Color">Choose your color</Link>
+        </li>
       </ul>
     </nav>
   );
