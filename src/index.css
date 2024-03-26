@@ -42,13 +42,6 @@
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
 body {
   font-size: var(--font-size-base);
   padding: var(--padding-base);
@@ -57,54 +50,12 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   margin: 0;
-  padding: 0;
+  padding: 0; 
 }
 
-/* Container and card styles */
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--flex-gap);
-  justify-content: center;
-}
-
-.card {
-  background-color: var(--background-light);
-  padding: var(--padding-card);
-  border-radius: 10px;
-  box-shadow: var(--shadow-light);
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-.card:hover {
-  box-shadow: var(--shadow-heavy);
-  transform: translateY(-5px);
-}
-
-/* Home.css */
-
-.home-container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: var(--background-light); /* Use a light background for better readability */
-  position: relative; /* Needed for absolute positioning of children */
-  transition: background-color 0.3s ease; /* Smooth transition for background color change */
-}
-
-.home-title {
-  font-size: 2.5rem; /* Larger font size for the title */
-  margin-bottom: 1rem; /* Space below the title */
-  color: var(--color-primary); /* Primary text color */
-}
-
-.home-paragraph {
-  font-size: 1.1rem; /* Slightly larger font size for readability */
-  line-height: 1.6; /* Increased line height for better readability */
-  color: var(--color-secondary); /* Secondary text color for less emphasis */
-  padding: 0 20px; /* Horizontal padding for text alignment */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .draggable-circle {
@@ -116,99 +67,6 @@ body {
   cursor: pointer; /* Cursor indicates it's draggable */
   box-shadow: var(--shadow-light); /* Consistent shadow with other elements */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interaction */
-}
+  overflow-x: auto; /* Allows horizontal scrolling if needed */
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Evenly space out flex items */
-  gap: 20px; /* Space between flex items */
-  margin-top: 20px; /* Space above the flex container */
-}
-
-.flex-item {
-  flex: 1 1 200px; /* Allow flex items to grow and shrink, with a base width */
-  background-color: var(--background-primary); /* Primary background for contrast */
-  padding: 15px;
-  border-radius: 8px; /* Slightly rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-}
-
-.flex-item:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  .flex-container {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-  }
-
-  .home-container, .flex-item {
-    padding: 10px; /* Smaller padding on smaller screens */
-  }
-
-  .home-title {
-    font-size: 2rem; /* Smaller title font size on smaller screens */
-  }
-
-  .home-paragraph {
-    font-size: 1rem; /* Adjust paragraph font size for smaller screens */
-  }
-}
-
-
-/* Feedback Form */
-.feedback-form {
-  background-color: var(--background-dark);
-  color: var(--text-light);
-  padding: var(--padding-base);
-  border-radius: 10px;
-  box-shadow: var(--shadow-light);
-  max-width: 500px;
-  margin: auto;
-}
-
-.feedback-form input, .feedback-form textarea {
-  width: calc(100% - 2 * var(--padding-small));
-  padding: var(--padding-small);
-  margin-bottom: var(--padding-small);
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  color: var(--text-dark);
-}
-
-.feedback-form button {
-  width: 100%;
-  padding: var(--padding-small);
-  background-color: #4A4E69;
-  color: var(--text-light);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.feedback-form button:hover {
-  background-color: #9A8C98;
-}
-
-/* Donate Container */
-.donate-container {
-  text-align: center;
-  padding: var(--padding-base);
-  margin: 2rem auto;
-  background-color: var(--background-light);
-  border-radius: 10px;
-  box-shadow: var(--shadow-light);
-}
-
-.title-donate {
-  font-style: oblique;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: var(--color-primary);
 }

@@ -1,0 +1,217 @@
+/* Base styles */
+:root {
+    /* Font and color scheme */
+    --font-primary: 'Roboto', sans-serif;
+    --color-primary: #4A4E69;  /* Updated for a modern look */
+    --color-secondary: #9A8C98; /* Softer secondary color */
+    --background-primary: #F2E9E4; /* Softer primary background */
+    --background-light: #C9ADA7;  /* Updated light background for contrast */
+    --background-dark: #22223B; /* Darker shade for depth */
+    --text-light: #ffffff;
+    --text-dark: #333333; /* Darker text for better readability */
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 4px 12px rgba(0, 0, 0, 0.2);
+  
+    /* Sizing and spacing */
+    --font-size-base: 1rem;
+    --padding-base: 1.5rem;
+    --padding-card: 1rem;
+    --flex-gap: 1.5rem;
+  
+    /* Media query adjustments */
+    --font-size-small: 0.9rem;
+    --padding-small: 1rem;
+    --flex-gap-small: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    :root {
+      --font-size-base: var(--font-size-small);
+      --padding-base: var(--padding-small);
+      --padding-card: var(--padding-small);
+      --flex-gap: var(--flex-gap-small);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    :root {
+      --font-size-base: 0.85rem;
+      --padding-base: 0.8rem;
+      --padding-card: 0.8rem;
+      --flex-gap: 0.8rem;
+    }
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  body {
+    font-size: var(--font-size-base);
+    padding: var(--padding-base);
+    background-color: var(--background-primary);
+    font-family: var(--font-primary);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Container and card styles */
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--flex-gap);
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: var(--background-light);
+    padding: var(--padding-card);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  
+  .card:hover {
+    box-shadow: var(--shadow-heavy);
+    transform: translateY(-5px);
+  }
+  
+  /* Home.css */
+  
+  .home-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-light); /* Use a light background for better readability */
+    position: relative; /* Needed for absolute positioning of children */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  }
+  
+  .home-title {
+    font-size: 2.5rem; /* Larger font size for the title */
+    margin-bottom: 1rem; /* Space below the title */
+    color: var(--color-primary); /* Primary text color */
+  }
+  
+  .home-paragraph {
+    font-size: 1.1rem; /* Slightly larger font size for readability */
+    line-height: 1.6; /* Increased line height for better readability */
+    color: var(--color-secondary); /* Secondary text color for less emphasis */
+    padding: 0 20px; /* Horizontal padding for text alignment */
+  }
+  
+  .draggable-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #8e44ad; /* A more vibrant color for visibility */
+    border-radius: 50%; /* Circular shape */
+    position: absolute;
+    cursor: pointer; /* Cursor indicates it's draggable */
+    box-shadow: var(--shadow-light); /* Consistent shadow with other elements */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interaction */
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Evenly space out flex items */
+    gap: 20px; /* Space between flex items */
+    margin-top: 20px; /* Space above the flex container */
+  }
+  
+  .flex-item {
+    flex: 1 1 200px; /* Allow flex items to grow and shrink, with a base width */
+    background-color: var(--background-primary); /* Primary background for contrast */
+    padding: 15px;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  }
+  
+  .flex-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .flex-container {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+  
+    .home-container, .flex-item {
+      padding: 10px; /* Smaller padding on smaller screens */
+    }
+  
+    .home-title {
+      font-size: 2rem; /* Smaller title font size on smaller screens */
+    }
+  
+    .home-paragraph {
+      font-size: 1rem; /* Adjust paragraph font size for smaller screens */
+    }
+  }
+  
+  
+  /* Feedback Form */
+  .feedback-form {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: var(--padding-base);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .feedback-form input, .feedback-form textarea {
+    width: calc(100% - 2 * var(--padding-small));
+    padding: var(--padding-small);
+    margin-bottom: var(--padding-small);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: var(--text-dark);
+  }
+  
+  .feedback-form button {
+    width: 100%;
+    padding: var(--padding-small);
+    background-color: #4A4E69;
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .feedback-form button:hover {
+    background-color: #9A8C98;
+  }
+  
+  /* Donate Container */
+  .donate-container {
+    text-align: center;
+    padding: var(--padding-base);
+    margin: 2rem auto;
+    background-color: var(--background-light);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+  }
+  
+  .title-donate {
+    font-style: oblique;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+  
