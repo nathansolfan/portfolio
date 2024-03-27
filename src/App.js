@@ -12,6 +12,7 @@ import Ticktacktoe from "./Components/Ticktacktoe/Ticktacktoe";
 import Donate from "./Components/Donate";
 import FeedbackForm from "./Components/Feedback";
 import ColorPalete from "./Components/ColorPalete";
+import ParallaxTest from "./Components/Parallax";
 
 function App() {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
@@ -73,6 +74,7 @@ function App() {
           <Route path="/Donate" element={<Donate />} />
           <Route path="/Feedback" element={<FeedbackForm />} />
           <Route path="/Color" element={<ColorPalete />} />
+          <Route path="/parallax" element={<ParallaxTest />} />
         </Routes>
       </div>
     </Router>
