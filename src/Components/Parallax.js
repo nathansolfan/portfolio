@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import pen from "../Images/pen.jpg";
-import pen2 from "../Images/pen2.jpg";
 import cat from "../Images/cat.gif";
 
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
@@ -10,7 +9,7 @@ function PalallaxTest() {
 
   return (
     <div>
-      <Parallax pages={4} ref={ref}>
+      <Parallax pages={6} ref={ref}>
         {/* <ParallaxLayer speed={1}>
             <h2>Welcome to my website</h2>
         </ParallaxLayer>
@@ -22,28 +21,38 @@ function PalallaxTest() {
         <ParallaxLayer
           offset={0}
           speed={1}
-          factor={2}
+          factor={1}
           style={{
             backgroundImage: `url(${pen})`,
-            backgroundSize: "cover",
+            backgroundSize: "55%",
           }}
         />
 
         <ParallaxLayer
           offset={2}
           speed={1}
-          factor={4}
+          factor={1}
           style={{
-            backgroundImage: `url(${pen2})`,
-            backgroundSize: "cover",
+            backgroundImage: `url(${pen})`,
+            backgroundSize: "65%",
           }}
         ></ParallaxLayer>
 
         <ParallaxLayer
-          sticky={{ start: 0.9, end: 2.5 }}
+          offset={3}
+          speed={1}
+          factor={1}
+          style={{
+            backgroundImage: `url(${pen})`,
+            backgroundSize: "85%",
+          }}
+        />
+
+        <ParallaxLayer
+          sticky={{ start: 0.0, end: 2.5 }}
           style={{ textAlign: "center" }}
         >
-          <img src={cat} />
+          <img src={cat} alt="" />
         </ParallaxLayer>
 
         <ParallaxLayer

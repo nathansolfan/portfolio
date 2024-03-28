@@ -51,8 +51,21 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0; 
-  display: flex;
   
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center; 
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center; 
+}
+.card {
+  display: flex;
+  justify-content: center;  
 }
 
 img {
