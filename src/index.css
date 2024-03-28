@@ -53,11 +53,48 @@ body {
   padding: 0; 
   
 }
-
+/* HERO */
 .hero-section {
   display: flex;
   justify-content: center; 
 }
+
+.content-overlay {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically in the center */
+  justify-content: space-around; /* Space out the items */
+  padding: var(--padding-base);
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
+  background-color: var(--background-light); /* Use a light background for better readability */
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+.content-overlay div {
+  flex: 1; /* Give both children (the text container and the image) equal flexibility */
+}
+
+.content-overlay img {
+  max-width: 50%; /* Limit image width to not take over the entire space */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners for the image */
+}
+
+/* Adjusting for smaller screens */
+@media (max-width: 768px) {
+  .content-overlay {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .content-overlay img {
+    max-width: 80%; /* Larger image on smaller screens */
+    margin-top: var(--padding-small); /* Add some space above the image */
+  }
+}
+
+/* END HERO */
+
+
 
 .flex-container {
   display: flex;
@@ -83,5 +120,4 @@ img {
   box-shadow: var(--shadow-light); /* Consistent shadow with other elements */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interaction */
   overflow-x: auto; /* Allows horizontal scrolling if needed */
-
 }
