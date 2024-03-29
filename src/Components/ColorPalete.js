@@ -10,7 +10,7 @@ export default function ColorPalette() {
   };
 
   return (
-    <div>
+    <div className="palete-container">
       <h2>Select a Color:</h2>
       {/* Predefined color palette */}
       <div style={{ display: "flex", marginBottom: "20px" }}>
