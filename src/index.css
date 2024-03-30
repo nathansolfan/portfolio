@@ -5,8 +5,8 @@
   --color-primary: #4A4E69;  /* Updated for a modern look */
   --color-secondary: #9A8C98; /* Softer secondary color */
   --background-primary: #F2E9E4; /* Softer primary background */
-  --background-light: #C9ADA7;  /* Updated light background for contrast */
-  --background-dark: #22223B; /* Darker shade for depth */
+  --background-light: #faf6f6;  /* Updated light background for contrast */
+  --background-dark: #464649; /* Darker shade for depth */
   --text-light: #ffffff;
   --text-dark: #333333; /* Darker text for better readability */
   --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -17,7 +17,6 @@
   --padding-base: 1.5rem;
   --padding-card: 1rem;
   --flex-gap: 1.5rem;
-
   /* Media query adjustments */
   --font-size-small: 0.9rem;
   --padding-small: 1rem;
