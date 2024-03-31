@@ -45,9 +45,17 @@ exports.login = async (req, res) => {
   }
 };
 
-// Feedback handler
 exports.feedback = async (req, res) => {
   const { name, email, message } = req.body;
-  // Add logic to save feedback
-  // Return success response
+
+  try {
+    await db.execute(
+      "INSERT INTO feedback (name, email, message) VALUES (?, ?, ?)",
+      [name, email, message]
+    );
+    res.json({ message: "Feedback submitted successfully" });
+  } catch (error) {
+    console.error("Error submitting feedback", error);
+    res.status(500).json({ message: "Server error", error });
+  }
 };
