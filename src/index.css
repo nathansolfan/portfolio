@@ -87,6 +87,7 @@ body {
   transition: background-color 0.3s ease; /* Smooth transition for background color change */
 }
 
+
 .content-overlay div {
   flex: 1; /* Give both children (the text container and the image) equal flexibility */
 }
