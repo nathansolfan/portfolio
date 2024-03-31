@@ -21,9 +21,9 @@ export default function Register() {
       }
 
       // Assuming the server's response is plain text
-      const data = await response.text();
-      console.log(data);
-      alert(data);
+      const data = await response.json();
+      console.log(data.message);
+      alert(data.message);
 
       // Navigate to another route upon successful registration
       navigate("/some-route-after-registration");
