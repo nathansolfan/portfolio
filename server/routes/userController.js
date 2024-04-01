@@ -6,7 +6,7 @@ exports.register = async (req, res) => {
 
   try {
     const [result] = await db.execute(
-      "INSERT INTO users (email, password) VALUES (?, ?)",
+      "INSERT INTO new_table (email, password) VALUES (?, ?)",
       [email, password]
     );
     res.json({
