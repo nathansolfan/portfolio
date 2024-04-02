@@ -17,21 +17,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../build/index.html"));
 });
 
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
-});
-
-app.get("/users", (req, res) => {
-  const sql = "SELECT * FROM users";
-  db.query(sql, (error, data) => {
-    if (error) return res.json(error);
-    return res.json(data);
-  });
-});
-
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });

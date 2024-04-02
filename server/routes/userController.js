@@ -23,9 +23,10 @@ exports.login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const [users] = await db.execute("SELECT * FROM users WHERE email = ?", [
-      email,
-    ]);
+    const [users] = await db.execute(
+      "SELECT * FROM new_table WHERE email = ?",
+      [email]
+    );
     if (users.length > 0) {
       const user = users[0];
       // Use bcrypt to compare the hashed password
