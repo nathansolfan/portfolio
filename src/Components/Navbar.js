@@ -16,7 +16,7 @@ export default function Navbar() {
           <Link to="/calculator">Calculator</Link>
         </li>
         <li>
-          <Link to="/login">Loginhi</Link>
+          <Link to="/login">Log in</Link>
         </li>
         <li>
           <Link to="/logout">Logout</Link>

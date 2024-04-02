@@ -24,9 +24,6 @@ export default function Register() {
       const data = await response.json();
       console.log(data.message);
       alert(data.message);
-
-      // Navigate to another route upon successful registration
-      navigate("/some-route-after-registration");
     } catch (error) {
       console.error("There has been a problem", error);
     }
