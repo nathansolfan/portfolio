@@ -50,6 +50,11 @@ exports.update = async (req, res) => {
   const { email, password } = req.body;
 
   try {
+    await db.execute("UPDATE new_table SET password = ? WHERE email = ?", [
+      email,
+      password,
+    ]);
+    res.json({ message: "User updated info" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error", error });
