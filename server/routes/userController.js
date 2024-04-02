@@ -45,6 +45,17 @@ exports.login = async (req, res) => {
     res.status(500).json({ message: "Server error", error });
   }
 };
+
+exports.update = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error", error });
+  }
+};
+
 exports.feedback = async (req, res) => {
   const { name, email, message } = req.body;
 
