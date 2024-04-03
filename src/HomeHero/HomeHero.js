@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Home from "../Home/Home";
 import Calculator from "../Components/Calculator/Calculator";
 import TicTacToe from "../Components/Ticktacktoe/Ticktacktoe";
-import image from "../Images/img.jpg";
+import image from "../Images/img.png";
 
 export default function HomeNathan() {
   return (
