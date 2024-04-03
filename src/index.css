@@ -75,6 +75,18 @@ body {
   /* max-width: 1200px;
   margin: 0 auto; */
 }
+.hero-items h1{
+  font-size: 64px; 
+}
+
+.hero-items p{
+  font-size: 32px;
+}
+
+.hero-items button {
+  width: 75px;
+  height: 45px;
+}
 
 .content-overlay {
   display: flex; /* Use flexbox */
@@ -134,14 +146,14 @@ body {
 }
 
 .flex-item {
-  
-  border-radius: 8px; /* Slightly rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  padding: 10px;
+  border-radius: 16px; /* Slightly rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.5s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 .flex-item:hover {
   transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
 }
 
 

@@ -10,8 +10,8 @@ export default function HomeNathan() {
       <div className="hero-section">
         <div className="content-overlay">
           <div className="hero-items">
-            <h2>This is Nathan</h2>
-            <p> Proficient in both front-end and back-end development</p>
+            <h1>NATHAN FERREIRA</h1>
+            <p>Full-Stack Developer. HTML/CSS/React</p>
             <button>Learn More</button>
           </div>
 
@@ -21,7 +21,6 @@ export default function HomeNathan() {
       <div>
         <Home />
         <Calculator />
-
         <TicTacToe />
       </div>
     </div>
