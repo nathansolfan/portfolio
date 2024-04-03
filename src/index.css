@@ -84,10 +84,12 @@ body {
 }
 
 .hero-items button {
-  width: 75px;
-  height: 45px;
+  border-radius: 4px; 
+  background-color: #fc981c;
 }
-
+.hero-items button:hover {
+  cursor: pointer;
+}
 .content-overlay {
   display: flex; /* Use flexbox */
   align-items: center; /* Align items vertically in the center */
