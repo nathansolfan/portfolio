@@ -38,7 +38,7 @@ export default function Home() {
 
   // Calculate the background color based on the horizontal position of the draggable circle
   const getBackgroundColor = () => {
-    const startColor = { r: 225, g: 175, b: 145 }; // Pink
+    const startColor = { r: 200, g: 100, b: 45 }; // Pink
     const endColor = { r: 135, g: 206, b: 235 }; // Sky Blue
     const ratio = position.x / 100; // Use the horizontal position (x) to determine the color
 
