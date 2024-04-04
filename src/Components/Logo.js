@@ -1,0 +1,28 @@
+import React from "react";
+import node from "../Images/logo/node.png";
+import html from "../Images/logo/html.png";
+import css from "../Images/logo/css.png";
+import javascript from "../Images/logo/javascript.png";
+import php from "../Images/logo/php.png";
+import sql from "../Images/logo/sql.png";
+
+export default function Logo() {
+  return (
+    <div>
+      <>
+        <p className="skills">Languages I`m qualified:</p>
+
+        <div className="logo">
+          <img className="img" alt="" />
+          <img src={html} alt="" />
+          <img src={css} alt="" />
+          <img src={javascript} alt="" />
+          <img src={php} alt="" />
+          <img src={node} alt="" />
+
+          <img src={sql} alt="" />
+        </div>
+      </>
+    </div>
+  );
+}

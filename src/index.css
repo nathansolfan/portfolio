@@ -104,12 +104,25 @@ body {
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px; /* Optional: rounded corners for the image */
 }
+/* HERO END */
+/* HOME */
+.home-title{
 
-.skills {
-  display: flex;
-  justify-content: center;
 }
 
+.home-paragraph {
+  
+}
+/* HOME END */
+
+/* LOGOS */
+.skills {
+  font-size: 24px; /* Larger font size for emphasis */
+  text-align: center; /* Center-align the text */
+  font-weight: bold; /* Bold text for prominence */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 20px; /* Additional space below the text */
+}
 .logo {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -122,15 +135,14 @@ body {
   width: 80px;
   height: auto;
   object-fit: contain;
-  border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
 }
 
 .logo img:hover {
   transform: scale(1.1); /* Slightly enlarge logos on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
 }
-
+/* LOGO END */
 
 /* Adjusting for smaller screens */
 @media (max-width: 768px) {
@@ -147,15 +159,13 @@ body {
 
 
 /* HOME CONTAINER */
-
 .home-container {
   display: flex;
   align-items: center;
   flex-direction: column; 
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
- 
+  width: 100%; 
 }
 
 .flex-container {
@@ -173,11 +183,11 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   transition: transform 0.5s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
+
 .flex-item:hover {
   transform: translateY(-5px); /* Lift effect on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
 }
-
 
 .card {
   display: flex;
@@ -202,7 +212,6 @@ img {
 }
 
 /* REGISTER */
-
 .register-container {  
   display: flex;
   flex-direction: column;
@@ -213,5 +222,4 @@ img {
   border-radius: 16px;
   box-shadow: 0 2px 4px rgb(0, 0, 0, 0.2);
 }
-
 /* END REGISTER */
