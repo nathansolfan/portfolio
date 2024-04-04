@@ -11,14 +11,14 @@ export default function Form({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Email</label>
+      <label className="label">Email</label>
       <input
         type="text"
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <label>Password</label>
+      <label className="label">Password</label>
       <input
         type="password" // Changed to 'password' to hide input
         required

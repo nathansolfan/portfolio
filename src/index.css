@@ -234,54 +234,55 @@ img {
   padding: 2rem;
   margin: 2rem auto;
   max-width: 400px;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Vibrant gradient background */
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.5s ease;
 }
 
 .register-container:hover {
-  transform: translateY(-10px);
+  transform: translateY(-2px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.25);
 }
 
-.register-container h2 {
+.register-container h2, label {
+  color: #fff; /* Light text color for contrast */
   margin-bottom: 1rem;
 }
-
-
 
 input[type="text"],
 input[type="password"] {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.75rem;
   margin-bottom: 1rem;
-  border: 2px solid transparent;
+  border: none; /* Remove border */
   border-radius: 5px;
-  background-color: #fff;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  background-color: #fff; /* Solid white background on focus */
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8); /* Glowing effect */
 }
 
 button[type="submit"] {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #ff5722; /* Vibrant button color */
+  color: #000000;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-weight: 400;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #ff7e5f;
-  color: #fff;
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+  box-shadow: 0 5px 15px rgba(255,87,34,0.4); /* Soft shadow for depth */
 }
+
 
 /* END REGISTER */
