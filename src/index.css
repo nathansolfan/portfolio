@@ -64,6 +64,7 @@ body {
 
 /* HERO */
 .hero-section {
+  padding-bottom: 40px;
   display: flex;
   justify-content: center; 
   /* max-width: 1200px;
@@ -283,6 +284,4 @@ button[type="submit"]:hover {
   transform: scale(1.05); /* Slightly enlarge button on hover */
   box-shadow: 0 5px 15px rgba(255,87,34,0.4); /* Soft shadow for depth */
 }
-
-
 /* END REGISTER */

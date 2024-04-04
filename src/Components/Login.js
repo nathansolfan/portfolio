@@ -1,9 +1,11 @@
 import React from "react";
 import Form from "./Form";
-import { navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "../index.css";
 
 export default function Login() {
   const navigate = useNavigate();
+
   const handleLogin = async (email, password) => {
     try {
       const response = await fetch("http://localhost:3001/api/login", {
@@ -15,23 +17,20 @@ export default function Login() {
       });
 
       if (response.ok) {
-        console.log("Login successful");
-        // Redirect or handle login success here
+        const data = await response.json();
+        console.log(data.message);
         navigate("/Ticktacktoe");
       } else {
-        const errorMessage = await response.text(); // Or response.json() for JSON response
-        console.error("Login failed:", errorMessage);
-        alert(`Login failed: ${errorMessage}`);
+        throw new Error("Login failed");
       }
     } catch (error) {
-      console.error("Login request failed", error);
-      alert("Login failed: Network error or server is down");
+      console.error("There was a problem with the login:", error);
     }
   };
 
   return (
-    <div>
-      <h2>Log in</h2>
+    <div className="login-container">
+      <h2>Log In</h2>
       <Form onSubmit={handleLogin} />
     </div>
   );
