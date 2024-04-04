@@ -17,9 +17,6 @@ export default function Navbar() {
           <Link to="/register">Register</Link>
         </li>
         <li>
-          <Link to="/calculator">Calculator</Link>
-        </li>
-        <li>
           <Link to="/login">Log in</Link>
         </li>
         <li>
@@ -30,9 +27,6 @@ export default function Navbar() {
         </li>
         <li>
           <Link to="/Feedback">Feedback</Link>
-        </li>
-        <li>
-          <Link to="/Color">Choose your color</Link>
         </li>
         <li
           onClick={toggleTools}
@@ -48,7 +42,9 @@ export default function Navbar() {
               <li>
                 <Link to="/calculator">Calculator</Link>
               </li>
-              {/* Add more tool links as needed */}
+              <li>
+                <Link to="/Color">Palete</Link>
+              </li>
             </ul>
           )}
         </li>

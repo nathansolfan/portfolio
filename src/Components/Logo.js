@@ -5,6 +5,7 @@ import css from "../Images/logo/css.png";
 import javascript from "../Images/logo/javascript.png";
 import php from "../Images/logo/php.png";
 import sql from "../Images/logo/sql.png";
+import mongo from "../Images/logo/mongo.png";
 
 export default function Logo() {
   const [showImages, setShowImages] = useState(false);
@@ -19,8 +20,6 @@ export default function Logo() {
   return (
     <div>
       <>
-        <p className="skills">- Skills - </p>
-
         <div className="logo" style={{ display: showImages ? "flex" : "none" }}>
           <img src={html} alt="" />
           <img src={css} alt="" />
@@ -28,6 +27,7 @@ export default function Logo() {
           <img src={php} alt="" />
           <img src={node} alt="" />
           <img src={sql} alt="" />
+          <img src={mongo} alt="" />
         </div>
       </>
     </div>

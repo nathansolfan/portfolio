@@ -136,8 +136,8 @@ body {
   margin-bottom: 20px; /* Additional space below the text */
 }
 .logo {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 80px;
   display: flex;
   justify-content: center;  
   gap: 20px;
@@ -147,12 +147,12 @@ body {
   width: 80px;
   height: auto;
   object-fit: contain;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo img:hover {
-  transform: scale(1.1); /* Slightly enlarge logos on hover */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  transform: scale(1.25); /* Slightly enlarge logos on hover */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.0); /* Soft shadow for depth */
 }
 /* LOGO END */
 
@@ -174,9 +174,13 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column; 
-  max-width: 1200px;
+  max-width: 60%;
   margin: 0 auto;
   width: 100%; 
+  border-radius: 9px;
+  box-shadow: var(--shadow-light);
+  background-color: var(--background-light);
+  margin-bottom: 40px;
 }
 
 .flex-container {
@@ -209,11 +213,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-/* NAVBAR */
-
-
-/* END NAVBAR */
-
 
 .draggable-circle {
   width: 50px;
@@ -227,8 +226,8 @@ img {
   overflow-x: auto; /* Allows horizontal scrolling if needed */
 }
 
-/* REGISTER */
-.register-container {
+/* REGISTER / LOGIN*/
+.register-container, .login-container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -241,12 +240,12 @@ img {
   transition: transform 0.5s ease;
 }
 
-.register-container:hover {
+.register-container:hover, .login-container:hover  {
   transform: translateY(-2px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.25);
 }
 
-.register-container h2, label {
+.register-container h2, .login-container h2, label {
   color: #fff; /* Light text color for contrast */
   margin-bottom: 1rem;
 }
