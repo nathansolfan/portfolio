@@ -106,13 +106,24 @@ body {
 }
 /* HERO END */
 /* HOME */
-.home-title{
-
+.home-title {
+  font-size: 2.5rem; /* Adjust font size to suit your design */
+  color: var(--color-primary); /* Use primary color for the title */
+  text-align: center; /* Center the title */
+  margin-top: 2rem; /* Spacing from the top */
+  margin-bottom: 1rem; /* Spacing before the paragraph */
 }
 
 .home-paragraph {
-  
+  font-size: 1rem; /* Keep the font size readable */
+  color: var(--text-dark); /* Dark color for contrast and readability */
+  max-width: 800px; /* Maximum width for optimal reading experience */
+  margin: auto; /* Center the paragraph if it's not full width */
+  padding: 0 20px; /* Padding on the sides */
+  line-height: 1.6; /* Line height for readability */
+  text-align: justify;/* Justify the text for a neat look */
 }
+
 /* HOME END */
 
 /* LOGOS */

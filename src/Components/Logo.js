@@ -19,7 +19,7 @@ export default function Logo() {
   return (
     <div>
       <>
-        <p className="skills">Languages I`m qualified:</p>
+        <p className="skills">- Skills - </p>
 
         <div className="logo" style={{ display: showImages ? "flex" : "none" }}>
           <img src={html} alt="" />
@@ -27,7 +27,6 @@ export default function Logo() {
           <img src={javascript} alt="" />
           <img src={php} alt="" />
           <img src={node} alt="" />
-
           <img src={sql} alt="" />
         </div>
       </>

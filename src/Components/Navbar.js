@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css"; // Import the CSS file
 
 export default function Navbar() {
+  const [isToolsOpen, setIsToolsOpen] = useState(false);
+
+  const toggleTools = () => setIsToolsOpen(!isToolsOpen);
+
   return (
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link> {/* Link to the Home page */}
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/register">Register</Link> {/* Link to the Register page */}
+          <Link to="/register">Register</Link>
         </li>
         <li>
           <Link to="/calculator">Calculator</Link>
@@ -22,9 +26,6 @@ export default function Navbar() {
           <Link to="/logout">Logout</Link>
         </li>
         <li>
-          <Link to="/ticktacktoe">Game</Link>
-        </li>
-        <li>
           <Link to="/donate">Donate</Link>
         </li>
         <li>
@@ -32,6 +33,20 @@ export default function Navbar() {
         </li>
         <li>
           <Link to="/Color">Choose your color</Link>
+        </li>
+        <li onClick={toggleTools} style={{ cursor: "pointer" }}>
+          Tools
+          {isToolsOpen && (
+            <ul>
+              <li>
+                <Link to="/ticktacktoe">Tic Tac Toe</Link>
+              </li>
+              <li>
+                <Link to="/calculator">Calculator</Link>
+              </li>
+              {/* Add more tool links as needed */}
+            </ul>
+          )}
         </li>
       </ul>
     </nav>

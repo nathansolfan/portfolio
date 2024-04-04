@@ -23,8 +23,6 @@ export default function HomeNathan() {
       <div>
         <Logo />
         <Home />
-        <Calculator />
-        <TicTacToe />
       </div>
     </div>
   );
