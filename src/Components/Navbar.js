@@ -34,12 +34,16 @@ export default function Navbar() {
         <li>
           <Link to="/Color">Choose your color</Link>
         </li>
-        <li onClick={toggleTools} style={{ cursor: "pointer" }}>
+        <li
+          onClick={toggleTools}
+          className="tools-dropdown"
+          style={{ cursor: "pointer" }}
+        >
           Tools
           {isToolsOpen && (
-            <ul>
+            <ul className="tools-dropdown-menu">
               <li>
-                <Link to="/ticktacktoe">Tic Tac Toe</Link>
+                <Link to="/ticktacktoe">TicTacToe</Link>
               </li>
               <li>
                 <Link to="/calculator">Calculator</Link>

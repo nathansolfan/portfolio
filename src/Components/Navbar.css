@@ -44,3 +44,35 @@ nav ul li a:hover, nav ul li a:focus {
     margin: 5px 0; /* Reduce margin for stacked items */
   }
 }
+.tools-dropdown {
+  position: relative;
+}
+
+.tools-dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #333; /* Match navbar background */
+  padding: 10px 0; /* Add some vertical padding */
+  margin: 0; /* Remove default margin */
+  list-style: none; /* Remove list bullets */
+  top: 100%; /* Position directly below the dropdown trigger */
+  left: 0; /* Align with the left edge of the dropdown trigger */
+  border-radius: 0 0 5px 5px; /* Rounded corners for the dropdown */
+}
+
+.tools-dropdown:hover .tools-dropdown-menu {
+  display: block; /* Show the dropdown on hover */
+}
+
+.tools-dropdown-menu li {
+  padding: 10px; /* Add some padding to dropdown items */
+}
+
+.tools-dropdown-menu li a {
+  color: #fff; /* White text for readability */
+  padding: 5px 15px; /* Padding for larger click areas */
+}
+
+.tools-dropdown-menu li a:hover {
+  background-color: #555; /* Darker background on hover */
+}
