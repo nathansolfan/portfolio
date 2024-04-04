@@ -40,11 +40,6 @@
     --flex-gap: 0.8rem;
   }
 }
-/* 
-*{
-  max-width: 1200px;
-  margin: 0 auto;
-} */
 
 body {
   font-size: var(--font-size-base);
@@ -52,14 +47,13 @@ body {
   background-color: var(--background-primary);
   font-family: var(--font-primary);
   color: var(--text-dark);
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
   padding: 0; 
   
 }
 
 /* PALETE  */
-
 .palete-container {
   display: flex;
   align-items: center;
@@ -101,7 +95,6 @@ body {
   transition: background-color 0.3s ease; /* Smooth transition for background color change */
 }
 
-
 .content-overlay div {
   flex: 1; /* Give both children (the text container and the image) equal flexibility */
 }
@@ -111,6 +104,33 @@ body {
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px; /* Optional: rounded corners for the image */
 }
+
+.skills {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;  
+  gap: 20px;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+}
+
+.logo img:hover {
+  transform: scale(1.1); /* Slightly enlarge logos on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
 
 /* Adjusting for smaller screens */
 @media (max-width: 768px) {
