@@ -1,6 +1,6 @@
 import React from "react";
-import pc from "../Images/logo/pc.webp";
-import raspberry from "../Images/logo/raspberry.webp";
+import pc from "../Images/logo/pc.png";
+import raspberry from "../Images/logo/raspberry.png";
 
 export default function Skills() {
   return (
