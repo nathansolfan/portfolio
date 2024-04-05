@@ -131,16 +131,24 @@ body {
 .skills-container {
   display: flex;
   justify-content: center;
-
+  flex-direction: column;
+  align-items: center;
 }
 
-.skills-para{
-  text-align: center;
+.skills-container img {
+  width: 800px;
+  height: auto;
+  object-fit: contain;
+}
+
+.skills-para{  
   font-size: 24px; /* Larger font size for emphasis */
   text-align: center; /* Center-align the text */
   font-weight: bold; /* Bold text for prominence */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 60%;
   margin-bottom: 20px; /* Additional space below the text */
+  margin: auto;
 }
 
 .logo {
@@ -153,7 +161,7 @@ body {
   margin-top: 80px;
   margin-bottom: 80px;
   display: flex;
-  justify-content: center;
+  justify-content: center;  
   gap: 20px;
 }
 
