@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css"; // Import the CSS file
+import Login from "./Login";
 
 export default function Navbar() {
   const [isToolsOpen, setIsToolsOpen] = useState(false);
 
-  const toggleTools = () => setIsToolsOpen(!isToolsOpen);
+  const toggleTools = ({ userEmail }) => setIsToolsOpen(!isToolsOpen);
+
+  const userEmail = localStorage.getItem("userEmail");
 
   return (
     <nav>
       <ul>
+        <li>{userEmail && <p>{userEmail}</p>}</li>
         <li>
           <Link to="/">Home</Link>
         </li>

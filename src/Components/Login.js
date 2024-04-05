@@ -19,6 +19,8 @@ export default function Login() {
       if (response.ok) {
         const data = await response.json();
         console.log(data.message);
+        localStorage.setItem("userEmail", email);
+
         navigate("/Ticktacktoe");
       } else {
         throw new Error("Login failed");
