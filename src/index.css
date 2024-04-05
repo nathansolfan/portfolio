@@ -14,7 +14,7 @@
 
   /* Sizing and spacing */
   --font-size-base: 1rem;
-  --padding-base: 1.5rem;
+  --padding-base: 1.25rem;
   --padding-card: 1rem;
   --flex-gap: 1.5rem;
   /* Media query adjustments */
@@ -64,7 +64,7 @@ body {
 
 /* HERO */
 .hero-section {
-  padding-bottom: 40px;
+  margin-top: 10px;
   display: flex;
   justify-content: center; 
   /* max-width: 1200px;
@@ -92,8 +92,7 @@ body {
   padding: var(--padding-base);
   border-radius: 10px;
   box-shadow: var(--shadow-light);
-  background-color: var(--background-light); /* Use a light background for better readability */
-  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  background-color: var(--background-light); 
 }
 
 .content-overlay div {
@@ -111,7 +110,7 @@ body {
   font-size: 2.5rem; /* Adjust font size to suit your design */
   color: var(--color-primary); /* Use primary color for the title */
   text-align: center; /* Center the title */
-  margin-top: 2rem; /* Spacing from the top */
+  margin-top: rem; /* Spacing from the top */
   margin-bottom: 1rem; /* Spacing before the paragraph */
 }
 
@@ -128,18 +127,33 @@ body {
 /* HOME END */
 
 /* LOGOS */
-.skills {
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.skills-para{
+  text-align: center;
   font-size: 24px; /* Larger font size for emphasis */
   text-align: center; /* Center-align the text */
   font-weight: bold; /* Bold text for prominence */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   margin-bottom: 20px; /* Additional space below the text */
 }
+
 .logo {
-  margin-top: 40px;
+  max-width: 100%;
+  height: auto;
+}
+
+
+.logo {
+  margin-top: 80px;
   margin-bottom: 80px;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   gap: 20px;
 }
 
@@ -174,7 +188,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column; 
-  max-width: 60%;
+  max-width: 63%;
   margin: 0 auto;
   width: 100%; 
   border-radius: 9px;
@@ -183,50 +197,22 @@ body {
   margin-bottom: 40px;
 }
 
-.flex-container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; 
-}
-
-.flex-item {
-  padding: 10px;
-  border-radius: 16px; /* Slightly rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.5s ease, box-shadow 0.3s ease; /* Smooth transitions */
-}
-
-.flex-item:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
-}
-
-.card {
-  display: flex;
-  justify-content: center;  
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 .draggable-circle {
-  width: 50px;
-  height: 50px;
-  background-color: #8e44ad; /* A more vibrant color for visibility */
-  border-radius: 50%; /* Circular shape */
+  width: 35px;
+  height: 35px;
+  background-color: #f69a05; /* A more vibrant color for visibility */
+  border-radius: 49%; /* Circular shape */
   position: absolute;
   cursor: pointer; /* Cursor indicates it's draggable */
   box-shadow: var(--shadow-light); /* Consistent shadow with other elements */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interaction */
   overflow-x: auto; /* Allows horizontal scrolling if needed */
 }
+/* END HOME CONTAINER */
+
 
 /* REGISTER / LOGIN*/
+
 .register-container, .login-container{
   display: flex;
   flex-direction: column;
@@ -283,4 +269,4 @@ button[type="submit"]:hover {
   transform: scale(1.05); /* Slightly enlarge button on hover */
   box-shadow: 0 5px 15px rgba(255,87,34,0.4); /* Soft shadow for depth */
 }
-/* END REGISTER */
+/* END REGISTER / LOGIN*/

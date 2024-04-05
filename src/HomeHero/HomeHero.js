@@ -4,6 +4,7 @@ import Calculator from "../Components/Calculator/Calculator";
 import TicTacToe from "../Components/Ticktacktoe/Ticktacktoe";
 import image from "../Images/img.png";
 import Logo from "../Components/Logo";
+import Skills from "../Components/Skills";
 
 export default function HomeNathan() {
   return (
@@ -23,6 +24,7 @@ export default function HomeNathan() {
       <div>
         <Logo />
         <Home />
+        <Skills />
       </div>
     </div>
   );

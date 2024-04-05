@@ -95,20 +95,6 @@ export default function Home() {
         />
         <div style={{ height: "100px" }}>{/* Additional content */}</div>
       </div>
-      <div className="flex-container">
-        <p className="flex-item">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit...
-        </p>
-        <p className="flex-item">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit...
-        </p>
-        <p className="flex-item">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit...
-        </p>
-        <p className="flex-item">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit...
-        </p>
-      </div>
     </div>
   );
 }
