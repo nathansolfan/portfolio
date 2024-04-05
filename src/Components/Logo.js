@@ -19,6 +19,17 @@ export default function Logo() {
   }, []);
   return (
     <div>
+      <div className="cube-container">
+        <div className="cube">
+          <div className="front-side"></div>
+          <div className="back-side"></div>
+          <div className="right-side"></div>
+          <div className="left-side"></div>
+          <div className="top-side"></div>
+          <div className="bottom-side"></div>
+        </div>
+      </div>
+
       <>
         <div className="logo" style={{ display: showImages ? "flex" : "none" }}>
           <img src={html} alt="" />
