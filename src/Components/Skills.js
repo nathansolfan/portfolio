@@ -4,26 +4,21 @@ import raspberry from "../Images/logo/raspberry.webp";
 
 export default function Skills() {
   return (
-    <div>
+    <div className="skills">
       <div className="skills-container">
         <p className="skills-para">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt
-          quod qui a repellat ratione sed ab delectus eaque! Eos eveniet nisi
-          vitae ipsa dolorem repellat earum voluptates, accusamus dignissimos
-          veniam.
+          With over 15 years of hands-on experience, a profound expertise PC
+          hardware nuances and high-performance computing solutions.
         </p>
-        <img className="logo" src={pc} alt="" />
+
+        <img src={pc} alt="PC Logo" />
       </div>
       <div className="skills-container">
-        {" "}
-        {/* Use the same 'skills-container' class to apply Flexbox */}
         <p className="skills-para">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt
-          quod qui a repellat ratione sed ab delectus eaque! Eos eveniet nisi
-          vitae ipsa dolorem repellat earum voluptates, accusamus dignissimos
-          veniam.
+          Versatility of Raspberry Pi, specialized in deploying humidity sensors
+          for plant care, that ensure optimal growth and control.
         </p>
-        <img className="logo1" src={raspberry} alt="" />
+        <img src={raspberry} alt="PC Logo" />
       </div>
     </div>
   );

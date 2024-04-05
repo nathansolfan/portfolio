@@ -105,6 +105,7 @@ body {
   border-radius: 10px; /* Optional: rounded corners for the image */
 }
 /* HERO END */
+
 /* HOME */
 .home-title {
   font-size: 2.5rem; /* Adjust font size to suit your design */
@@ -127,33 +128,35 @@ body {
 /* HOME END */
 
 /* LOGOS */
+.skills {
+  display: flex;
+  justify-content: center; /* Center the inner boxes horizontally */
+  flex-wrap: wrap; /* Allow the boxes to wrap on smaller screens */
+  gap: 20px; /* Add some space between the inner boxes */
+}
 
 .skills-container {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* Stack the paragraph and image vertically */
+  align-items: center; /* Center the items horizontally */
+  border: 1px solid #dadada; /* Add a border to each inner box */
+  padding: 20px; /* Add some padding inside each box */
+  max-width: 28.5%; /* Set a max width for each inner box */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optional: Add a subtle shadow for depth */
 }
+
+.skills-para {
+  text-align: center; /* Center-align the text */
+  min-height: 60px;
+  margin-bottom: 20px; /* Add space between the paragraph and the image */
+}
+
+
 
 .skills-container img {
-  width: 800px;
+  width: 350px;
   height: auto;
   object-fit: contain;
-}
-
-.skills-para{  
-  font-size: 24px; /* Larger font size for emphasis */
-  text-align: center; /* Center-align the text */
-  font-weight: bold; /* Bold text for prominence */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  width: 60%;
-  margin-bottom: 20px; /* Additional space below the text */
-  margin: auto;
-}
-
-.logo {
-  max-width: 100%;
-  height: auto;
 }
 
 
