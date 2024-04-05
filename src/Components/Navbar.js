@@ -13,7 +13,10 @@ export default function Navbar() {
   return (
     <nav>
       <ul>
-        <li>{userEmail && <p>{userEmail}</p>}</li>
+        <li className="user-info">
+          {userEmail && <span className="user-email">{userEmail}</span>}
+        </li>
+
         <li>
           <Link to="/">Home</Link>
         </li>

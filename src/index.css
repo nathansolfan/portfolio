@@ -4,7 +4,7 @@
   --font-primary: 'Roboto', sans-serif;
   --color-primary: #4A4E69;  /* Updated for a modern look */
   --color-secondary: #9A8C98; /* Softer secondary color */
-  --background-primary: #2e2e2d; /* Softer primary background */
+  --background-primary: #d3d3d3; /* Softer primary background */
   --background-light: #faf6f6;  /* Updated light background for contrast */
   --background-dark: #464649; /* Darker shade for depth */
   --text-light: #ffffff;
@@ -52,6 +52,26 @@ body {
   padding: 0; 
   
 }
+
+/* USER INFO */
+.user-info {
+  display: flex;
+  align-items: end;
+  /* Additional styling */
+}
+
+.user-icon {
+  width: 24px; /* Adjust based on your preference */
+  height: 24px;
+  margin-right: 10px;
+}
+
+.user-email {
+  font-size: 0.9rem;
+  color: #ddd; /* Lighter color for a subtler appearance */
+  /* Additional styling */
+}
+
 
 /* PALETE  */
 .palete-container {
