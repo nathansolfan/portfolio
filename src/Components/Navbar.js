@@ -26,9 +26,11 @@ export default function Navbar() {
         <li>
           <Link to="/login">Log in</Link>
         </li>
-        <li>
-          <Link to="/logout">Logout</Link>
-        </li>
+        {userEmail && (
+          <li>
+            <Link to="/logout">Logout</Link>
+          </li>
+        )}
         <li>
           <Link to="/donate">Donate</Link>
         </li>
