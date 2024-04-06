@@ -29,7 +29,9 @@ nav ul li a {
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
 }
 
-nav ul li a:hover, nav ul li a:focus {
+
+
+nav ul li.tools-dropdown:hover, nav ul li a:hover, nav ul li a:focus, nav ul li:focus, nav ul li a:focus {
   background-color: #555; /* Darker background on hover/focus for depth */
   color: #ffcc00; /* Highlight color for text */
 }
