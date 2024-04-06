@@ -50,6 +50,8 @@ body {
   line-height: 1.5;
   margin: 0;
   padding: 0; 
+
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   
 }
 
@@ -296,13 +298,16 @@ body {
 
 /* NOT FOUND */
 .notfound {
-
-}
-
-.notfound-para {
-  
+  position: fixed; /* Use fixed to cover the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Cover the viewport without losing aspect ratio */
 }
 /* END NOT FOUND */
+
+
 
 /* REGISTER / LOGIN*/
 .register-container, .login-container{
