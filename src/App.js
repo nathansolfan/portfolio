@@ -13,6 +13,7 @@ import Donate from "./Components/Donate";
 import FeedbackForm from "./Components/Feedback";
 import ColorPalete from "./Components/ColorPalete";
 import ParallaxTest from "./Components/Parallax";
+import NotFound from "./Components/NotFound";
 
 function App() {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
@@ -64,6 +65,7 @@ function App() {
           }}
         ></div>
         <Routes>
+          <Route path="/notFound" element={<NotFound />} />
           <Route path="/" element={<HomeHero />} />
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />

@@ -58,7 +58,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Adjust the height as needed */
+  height: 75vh; /* Adjust the height as needed */
 }
 
 .cube {  
@@ -73,14 +73,15 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid #ccc;
+  border: 1px solid #ff0000;
+  background-color: #000000;
 }
 
 .front-side {
-  transform: rotateY(0deg) translateZ(100px);
+  transform: rotateY(0deg) translateZ(100px);  
+  background-color: #b29393;
 }
-.back-side {
+.back-side {  
   transform: rotateY(180deg) translateZ(100px);
 }
 .right-side {
@@ -97,19 +98,19 @@ body {
 }
 
 @keyframes rotate-cube {
-  from {
-    transform: rotateX(0) rotateY(0);
-  }
-  to {
-    transform: rotateX(360deg) rotateY(360deg);
-  }
+  from { transform: rotateX(0) rotateY(0); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.cube {
+  animation: rotate-cube 20s infinite linear;
 }
 
 
 /* USER INFO */
 .user-info {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   /* Additional styling */
 }
 
