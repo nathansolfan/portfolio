@@ -65,7 +65,7 @@ function App() {
           }}
         ></div>
         <Routes>
-          <Route path="/notFound" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="/" element={<HomeHero />} />
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
