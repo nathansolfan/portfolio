@@ -105,6 +105,7 @@ body {
 .cube {
   animation: rotate-cube 20s infinite linear;
 }
+/* CUBE END  */
 
 
 /* USER INFO */
@@ -226,14 +227,11 @@ body {
   margin-bottom: 20px; /* Add space between the paragraph and the image */
 }
 
-
-
 .skills-container img {
   width: 350px;
   height: auto;
   object-fit: contain;
 }
-
 
 .logo {
   margin-top: 80px;
@@ -296,9 +294,17 @@ body {
 }
 /* END HOME CONTAINER */
 
+/* NOT FOUND */
+.notfound {
+
+}
+
+.notfound-para {
+  
+}
+/* END NOT FOUND */
 
 /* REGISTER / LOGIN*/
-
 .register-container, .login-container{
   display: flex;
   flex-direction: column;
