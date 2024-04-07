@@ -6,6 +6,7 @@ import javascript from "../Images/logo/javascript.png";
 import php from "../Images/logo/php.png";
 import sql from "../Images/logo/sql.png";
 import mongo from "../Images/logo/mongo.png";
+import vite from "../Images/logo/vite.png";
 
 export default function Logo() {
   const [showImages, setShowImages] = useState(false);
@@ -35,6 +36,7 @@ export default function Logo() {
           <img src={html} alt="" />
           <img src={css} alt="" />
           <img src={javascript} alt="" />
+          <img src={vite} alt="" />
           <img src={php} alt="" />
           <img src={node} alt="" />
           <img src={sql} alt="" />

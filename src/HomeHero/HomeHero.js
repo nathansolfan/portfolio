@@ -25,6 +25,9 @@ export default function HomeNathan() {
         <Logo />
         <Home />
         <Skills />
+        <>
+          <h2>My projects</h2>
+        </>
       </div>
     </div>
   );

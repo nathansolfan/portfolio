@@ -14,6 +14,7 @@ import FeedbackForm from "./Components/Feedback";
 import ColorPalete from "./Components/ColorPalete";
 import ParallaxTest from "./Components/Parallax";
 import NotFound from "./Components/NotFound";
+import Account from "./Components/Account";
 
 function App() {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
@@ -71,6 +72,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/account" element={<Account />} />
+
           <Route path="/calculator" element={<Calculator />} />
           <Route path="/Ticktacktoe" element={<Ticktacktoe />} />
           <Route path="/Donate" element={<Donate />} />

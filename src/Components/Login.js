@@ -19,7 +19,8 @@ export default function Login() {
       if (response.ok) {
         const data = await response.json();
         console.log(data.message);
-        localStorage.setItem("userEmail", email);
+        // save email
+        localStorage.setItem("userId", data.userId);
 
         navigate("/Ticktacktoe");
       } else {

@@ -169,9 +169,17 @@ body {
   padding: var(--padding-base);
   border-radius: 10px;
   background-color: var(--background-light);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15);
-  
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1), /* Subtle inner highlight */
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+  border: 2.5px solid rgba(0, 0, 0, 0.1);
 }
+
+
+
 
 .content-overlay div {
   flex: 1; /* Give both children (the text container and the image) equal flexibility */

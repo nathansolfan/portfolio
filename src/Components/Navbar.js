@@ -16,7 +16,9 @@ export default function Navbar() {
         <li className="user-info">
           {userEmail && <span className="user-email">{userEmail}</span>}
         </li>
-
+        <li>
+          <Link to="/account">Account</Link>
+        </li>
         <li>
           <Link to="/">Home</Link>
         </li>

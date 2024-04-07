@@ -61,6 +61,28 @@ exports.update = async (req, res) => {
   }
 };
 
+exports.getUserById = async (req, res) => {
+  const id = req.params.id; // Accessing the id passed in the URL
+
+  try {
+    const [user] = await db.execute("SELECT * FROM new_table WHERE id = ?", [
+      id,
+    ]);
+
+    if (user.length > 0) {
+      const userInfo = user[0];
+      // Consider excluding sensitive information like passwords from the response
+      delete userInfo.password;
+      res.json(userInfo);
+    } else {
+      res.status(404).json({ message: "User not found" });
+    }
+  } catch (error) {
+    console.error("Error fetching user info by ID", error);
+    res.status(500).json({ message: "Server error", error });
+  }
+};
+
 exports.feedback = async (req, res) => {
   const { name, email, message } = req.body;
 
