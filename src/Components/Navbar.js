@@ -1,21 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css"; // Import the CSS file
-import Login from "./Login";
 
 export default function Navbar() {
   const [isToolsOpen, setIsToolsOpen] = useState(false);
-
-  const toggleTools = ({ userEmail }) => setIsToolsOpen(!isToolsOpen);
-
   const userEmail = localStorage.getItem("userEmail");
+  const toggleTools = ({ userEmail }) => setIsToolsOpen(!isToolsOpen);
 
   return (
     <nav>
       <ul>
-        <li className="user-info">
-          {userEmail && <span className="user-email">{userEmail}</span>}
-        </li>
+        {userEmail && <span>{userEmail}</span>}
         <li>
           <Link to="/account">Account</Link>
         </li>
@@ -28,11 +23,9 @@ export default function Navbar() {
         <li>
           <Link to="/login">Log in</Link>
         </li>
-        {userEmail && (
-          <li>
-            <Link to="/logout">Logout</Link>
-          </li>
-        )}
+        <li>
+          <Link to="/logout">Logout</Link>
+        </li>
         <li>
           <Link to="/donate">Donate</Link>
         </li>

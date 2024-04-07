@@ -15,12 +15,13 @@ export default function Login() {
         },
         body: JSON.stringify({ email, password }),
       });
-
       if (response.ok) {
         const data = await response.json();
         console.log(data.message);
-        // save email
+        console.log(data);
+        // Ensure the server response includes 'userId' and 'email'
         localStorage.setItem("userId", data.userId);
+        localStorage.setItem("userEmail", data.email);
 
         navigate("/Ticktacktoe");
       } else {

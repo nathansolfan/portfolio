@@ -73,7 +73,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/account" element={<Account />} />
-
           <Route path="/calculator" element={<Calculator />} />
           <Route path="/Ticktacktoe" element={<Ticktacktoe />} />
           <Route path="/Donate" element={<Donate />} />

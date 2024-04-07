@@ -31,9 +31,13 @@ exports.login = async (req, res) => {
     );
     if (users.length > 0) {
       const user = users[0];
-      // Compare plaintext passwords
       if (password === user.password) {
-        res.json({ message: "Login successful" });
+        // Respond with user information when login is successful
+        res.json({
+          message: "Login successful",
+          userId: user.id, // Adjust 'id' if your column name is different
+          email: user.email,
+        });
       } else {
         res.status(401).json({ message: "Incorrect password" });
       }
@@ -61,7 +65,7 @@ exports.update = async (req, res) => {
   }
 };
 
-exports.getUserById = async (req, res) => {
+exports.userId = async (req, res) => {
   const id = req.params.id; // Accessing the id passed in the URL
 
   try {

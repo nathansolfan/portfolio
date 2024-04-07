@@ -4,21 +4,26 @@ export default function Account() {
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
-    const userId = async () => {
-      // get the email
+    const fetchUser = async () => {
       const userId = localStorage.getItem("userId");
 
       if (userId) {
         const response = await fetch(
           `http://localhost:3001/api/user/${userId}`
         );
+        console.log(response);
+
         if (response.ok) {
           const data = await response.json();
+          console.log(data);
+
           setUserInfo(data);
         }
       }
     };
-  });
+
+    fetchUser();
+  }, []);
 
   return (
     <div>
@@ -26,6 +31,7 @@ export default function Account() {
       {userInfo && (
         <div>
           <p>Email: {userInfo.email}</p>
+          {/* Display other user info as needed */}
         </div>
       )}
     </div>
