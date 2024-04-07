@@ -16,12 +16,10 @@ export default function Account() {
         if (response.ok) {
           const data = await response.json();
           console.log(data);
-
           setUserInfo(data);
         }
       }
     };
-
     fetchUser();
   }, []);
 
@@ -30,8 +28,8 @@ export default function Account() {
       <h1>Account details</h1>
       {userInfo && (
         <div>
+          <p>ID: {userInfo.id}</p>
           <p>Email: {userInfo.email}</p>
-          {/* Display other user info as needed */}
         </div>
       )}
     </div>

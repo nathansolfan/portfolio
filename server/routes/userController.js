@@ -87,6 +87,16 @@ exports.userId = async (req, res) => {
   }
 };
 
+exports.users = async (req, res) => {
+  try {
+    const [users] = await db.execute("SELECT id, email FROM new_table");
+    res.json(users);
+  } catch (error) {
+    console.error("Error fetching them", error);
+    res.status(500).json({ message: "Server error", error });
+  }
+};
+
 exports.feedback = async (req, res) => {
   const { name, email, message } = req.body;
 
