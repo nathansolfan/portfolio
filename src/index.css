@@ -142,6 +142,7 @@ body {
 /* HERO */
 .hero-section {
   margin-top: 10px;
+  margin-bottom: 60px;
   display: flex;
   justify-content: center; 
   /* max-width: 1200px;
@@ -176,10 +177,8 @@ body {
     inset 0 1px 2px rgba(255, 255, 255, 0.1), /* Subtle inner highlight */
     inset 0 -2px 4px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
   border: 2.5px solid rgba(0, 0, 0, 0.1);
+  margin: 0 auto; 
 }
-
-
-
 
 .content-overlay div {
   flex: 1; /* Give both children (the text container and the image) equal flexibility */
@@ -192,26 +191,8 @@ body {
 }
 /* HERO END */
 
-/* HOME */
-.home-title {
-  font-size: 2.5rem; /* Adjust font size to suit your design */
-  color: var(--color-primary); /* Use primary color for the title */
-  text-align: center; /* Center the title */
-  margin-top: rem; /* Spacing from the top */
-  margin-bottom: 1rem; /* Spacing before the paragraph */
-}
 
-.home-paragraph {
-  font-size: 1rem; /* Keep the font size readable */
-  color: var(--text-dark); /* Dark color for contrast and readability */
-  max-width: 800px; /* Maximum width for optimal reading experience */
-  margin: auto; /* Center the paragraph if it's not full width */
-  padding: 0 20px; /* Padding on the sides */
-  line-height: 1.6; /* Line height for readability */
-  text-align: justify;/* Justify the text for a neat look */
-}
 
-/* HOME END */
 
 /* LOGOS */
 .skills {
@@ -232,7 +213,11 @@ body {
 
   opacity: 0;
   transform: translateY(-20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 5s ease, transform 5s ease;
+}
+.img-box{
+  background-color:#fcb900;
+  border-radius: 15px;
 }
 
 .skills-container.reveal {
@@ -252,12 +237,22 @@ body {
   height: auto;
   object-fit: contain;
   /* img effect */
-  transition: transform 0.3s ease; /* Smooth transition for the transform property */
-  background-color:#fcb900;
+  transition: transform 0.75s ease; /* Smooth transition for the transform property */
+  
 
 }
 .skills-container img:hover {
-  transform: scale(1.1); /* Scale the image up to 105% of its original size on hover */
+  transform: scale(0.85); /* Scale the image up to 105% of its original size on hover */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column; /* Stack the paragraph and image vertically */
+  align-items: center; /* Center the items horizontally */
+  border: 1px solid #dadada; /* Add a border to each inner box */
+  padding: 20px; /* Add some padding inside each box */
+  max-width: 28.5%; /* Set a max width for each inner box */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optional: Add a subtle shadow for depth */  
 }
 
 .logo {
@@ -266,14 +261,22 @@ body {
   display: flex;
   justify-content: center;  
   gap: 20px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 5s ease, transform 5s ease;
+}
+
+.logo.reveal  {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to final position */
 }
 
 .logo img {
   width: 80px;
   height: auto;
   object-fit: contain;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .logo img:hover {
   transform: scale(1.25); /* Slightly enlarge logos on hover */
@@ -305,7 +308,25 @@ body {
   border-radius: 9px;
   box-shadow: var(--shadow-light);
   background-color: var(--background-light);
+  padding-top: 10px;
   margin-bottom: 40px;
+}
+.home-title {
+  font-size: 2.5rem; /* Adjust font size to suit your design */
+  color: var(--color-primary); /* Use primary color for the title */
+  text-align: center; /* Center the title */
+  margin-top: rem; /* Spacing from the top */
+  margin-bottom: 1rem; /* Spacing before the paragraph */
+}
+
+.home-paragraph {
+  font-size: 1rem; /* Keep the font size readable */
+  color: var(--text-dark); /* Dark color for contrast and readability */
+  max-width: 800px; /* Maximum width for optimal reading experience */
+  margin: auto; /* Center the paragraph if it's not full width */
+  padding: 0 20px; /* Padding on the sides */
+  line-height: 1.6; /* Line height for readability */
+  text-align: justify;/* Justify the text for a neat look */
 }
 
 .draggable-circle {

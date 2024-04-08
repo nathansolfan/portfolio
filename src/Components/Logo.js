@@ -14,35 +14,22 @@ export default function Logo() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowImages(true);
-    }, 3000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div>
-      <div className="cube-container">
-        <div className="cube">
-          <div className="front-side"></div>
-          <div className="back-side"></div>
-          <div className="right-side"></div>
-          <div className="left-side"></div>
-          <div className="top-side"></div>
-          <div className="bottom-side"></div>
-        </div>
+    <div className="logo-container">
+      <div className={`logo ${showImages ? "reveal" : ""}`}>
+        <img src={html} alt="" />
+        <img src={css} alt="" />
+        <img src={javascript} alt="" />
+        <img src={vite} alt="" />
+        <img src={php} alt="" />
+        <img src={node} alt="" />
+        <img src={sql} alt="" />
+        <img src={mongo} alt="" />
       </div>
-
-      <>
-        <div className="logo" style={{ display: showImages ? "flex" : "none" }}>
-          <img src={html} alt="" />
-          <img src={css} alt="" />
-          <img src={javascript} alt="" />
-          <img src={vite} alt="" />
-          <img src={php} alt="" />
-          <img src={node} alt="" />
-          <img src={sql} alt="" />
-          <img src={mongo} alt="" />
-        </div>
-      </>
     </div>
   );
 }

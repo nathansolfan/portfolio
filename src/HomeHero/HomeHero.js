@@ -9,6 +9,7 @@ import Skills from "../Components/Skills";
 export default function HomeNathan() {
   return (
     <div>
+      <Logo />
       <div className="hero-section">
         <div className="content-overlay">
           <div className="hero-items">
@@ -22,7 +23,6 @@ export default function HomeNathan() {
       </div>
 
       <div>
-        <Logo />
         <Home />
         <Skills />
         <>
