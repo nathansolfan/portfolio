@@ -1,26 +1,10 @@
-/* Base styles */
 :root {
-  /* Font and color scheme */
   --font-primary: 'Roboto', sans-serif;
-  --color-primary: #4A4E69;  /* Updated for a modern look */
-  --color-secondary: #9A8C98; /* Softer secondary color */
-  --background-primary: #d3d3d3; /* Softer primary background */
-  --background-light: #faf6f6;  /* Updated light background for contrast */
-  --background-dark: #464649; /* Darker shade for depth */
-  --text-light: #ffffff;
-  --text-dark: #333333; /* Darker text for better readability */
-  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-heavy: 0 4px 12px rgba(0, 0, 0, 0.2);
-
-  /* Sizing and spacing */
-  --font-size-base: 1rem;
-  --padding-base: 1.25rem;
-  --padding-card: 1rem;
-  --flex-gap: 1.5rem;
-  /* Media query adjustments */
-  --font-size-small: 0.9rem;
-  --padding-small: 1rem;
-  --flex-gap-small: 1rem;
+  --color-primary: #4A4E69;
+  --background-primary: #d3d3d3;
+  --text-dark: #333;
+  --padding-base: 1rem;
+  --border-radius-base: 4px;
 }
 
 @media (max-width: 768px) {
@@ -42,17 +26,12 @@
 }
 
 body {
-  font-size: var(--font-size-base);
-  padding: var(--padding-base);
-  background-color: var(--background-primary);
   font-family: var(--font-primary);
+  background-color: var(--background-primary);
   color: var(--text-dark);
-  line-height: 1.5;
   margin: 0;
-  padding: 0; 
-
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* CUBE */
@@ -191,9 +170,6 @@ body {
 }
 /* HERO END */
 
-
-
-
 /* LOGOS */
 .skills {
   display: flex;
@@ -212,8 +188,8 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optional: Add a subtle shadow for depth */
 
   opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 5s ease, transform 5s ease;
+  transform: translateY(-10px);
+  transition: opacity 3s ease, transform 3s ease;
 }
 .img-box{
   background-color:#fcb900;
@@ -262,8 +238,8 @@ body {
   justify-content: center;  
   gap: 20px;
   opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 5s ease, transform 5s ease;
+  transform: translateY(-10px);
+  transition: opacity 3s ease, transform 3s ease;
 }
 
 .logo.reveal  {
