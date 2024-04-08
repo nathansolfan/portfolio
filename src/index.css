@@ -241,6 +241,13 @@ body {
   width: 350px;
   height: auto;
   object-fit: contain;
+  /* img effect */
+  transition: transform 0.3s ease; /* Smooth transition for the transform property */
+  background-color:#fcb900;
+
+}
+.skills-container img:hover {
+  transform: scale(1.1); /* Scale the image up to 105% of its original size on hover */
 }
 
 .logo {
