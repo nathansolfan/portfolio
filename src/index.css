@@ -7,12 +7,14 @@
   --border-radius-base: 4px;
 }
 
+
 @media (max-width: 768px) {
   :root {
     --font-size-base: var(--font-size-small);
     --padding-base: var(--padding-small);
     --padding-card: var(--padding-small);
     --flex-gap: var(--flex-gap-small);
+    
   }
 }
 
@@ -32,6 +34,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  
 }
 
 /* USER INFO */

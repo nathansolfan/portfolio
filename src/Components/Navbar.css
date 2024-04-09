@@ -2,9 +2,16 @@
 nav {
   background-color: #333; /* Dark background for a sleek look */
   color: #fff; /* White text for contrast */
-  padding: 1rem 0; /* Vertical padding for breathing space */
+  padding: 0.5rem 0; /* Adjust vertical padding to fit the logo */
   display: flex;
-  justify-content: center; /* Center the navigation horizontally */
+  justify-content: center; /* Adjust alignment to space-between to allow logo and menu items to be on opposite ends */
+  align-items: center; /* Center items vertically */
+}
+
+nav img {
+  margin-left: 1rem; /* Add some margin to the left of the logo for spacing */
+  height: 50px; /* Adjust the logo height as needed */
+  width: auto; /* Maintain aspect ratio */
 }
 
 nav ul {
@@ -14,10 +21,7 @@ nav ul {
   display: flex; /* Align items in a row */
   flex-wrap: wrap; /* Wrap items for smaller screens */
   justify-content: center; /* Center items in the menu */
-}
-
-nav ul li {
-  margin: 0 10px; /* Spacing between menu items */
+  margin-right: 1rem; /* Add some margin to the right of the menu for spacing */
 }
 
 nav ul li a {

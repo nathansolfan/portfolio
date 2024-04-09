@@ -23,7 +23,7 @@ export default function Login() {
         localStorage.setItem("userId", data.userId);
         localStorage.setItem("userEmail", data.email);
 
-        navigate("/Ticktacktoe");
+        navigate("/");
       } else {
         throw new Error("Login failed");
       }

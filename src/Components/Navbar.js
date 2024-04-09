@@ -1,29 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css"; // Import the CSS file
+import "./Navbar.css"; // Ensure this path is correct
+import nathan from "../Images/nathan1.webp"; // Ensure this path is correct
 
 export default function Navbar() {
   const [isToolsOpen, setIsToolsOpen] = useState(false);
   const userEmail = localStorage.getItem("userEmail");
-  const toggleTools = ({ userEmail }) => setIsToolsOpen(!isToolsOpen);
+
+  const toggleTools = () => setIsToolsOpen(!isToolsOpen);
 
   return (
     <nav>
+      <img src={nathan} alt="Nathan" />
+
       <ul>
-        {userEmail && <span>{userEmail}</span>}
-        <li>
-          <Link to="/account">Account</Link>
-        </li>
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="/register">Register</Link>
-        </li>
-        <li>
-          <Link to="/login">Log in</Link>
-        </li>
-        {userEmail ? (
+        {!userEmail && (
+          <>
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
+            <li>
+              <Link to="/login">Log in</Link>
+            </li>
+          </>
+        )}
+        {userEmail && (
           <>
             <li>
               <Link to="/logout">Logout</Link>
@@ -32,7 +36,10 @@ export default function Navbar() {
               <Link to="/donate">Donate</Link>
             </li>
             <li>
-              <Link to="/Feedback">Feedback</Link>
+              <Link to="/feedback">Feedback</Link>
+            </li>
+            <li>
+              <Link to="/account">Account</Link>
             </li>
             <li
               onClick={toggleTools}
@@ -49,16 +56,12 @@ export default function Navbar() {
                     <Link to="/calculator">Calculator</Link>
                   </li>
                   <li>
-                    <Link to="/Color">Palete</Link>
+                    <Link to="/color">Palette</Link>
                   </li>
                 </ul>
               )}
             </li>
           </>
-        ) : (
-          <li>
-            <Link to="/login">Log in</Link>
-          </li>
         )}
       </ul>
     </nav>
