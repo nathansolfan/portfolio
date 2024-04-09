@@ -7,7 +7,7 @@ export default function Logout() {
   useEffect(() => {
     localStorage.removeItem("userEmail");
     // Redirect to the homepage or login page after logout
-    navigate("/");
+    navigate("/feedback");
   }, [navigate]);
 
   // No need to return any JSX

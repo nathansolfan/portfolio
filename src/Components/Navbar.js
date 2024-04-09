@@ -1,18 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css"; // Ensure this path is correct
 import nathan from "../Images/nathan1.webp"; // Ensure this path is correct
 
 export default function Navbar() {
   const [isToolsOpen, setIsToolsOpen] = useState(false);
-  const userEmail = localStorage.getItem("userEmail");
+  const [userEmail, setUserEmail] = useState(localStorage.getItem("userEmail"));
 
   const toggleTools = () => setIsToolsOpen(!isToolsOpen);
+  useEffect(() => {
+    const handleStorageChange = () => {
+      // Update userEmail based on the current value in localStorage
+      setUserEmail(localStorage.getItem("userEmail"));
+    };
+
+    // Listen for localStorage changes
+    window.addEventListener("storage", handleStorageChange);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   return (
     <nav>
-      <img src={nathan} alt="Nathan" />
-
+      <img src={nathan} alt="Nathan Logo" />
       <ul>
         <li>
           <Link to="/">Home</Link>
