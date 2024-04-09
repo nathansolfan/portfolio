@@ -8,18 +8,22 @@ export default function Navbar() {
   const [userEmail, setUserEmail] = useState(localStorage.getItem("userEmail"));
 
   const toggleTools = () => setIsToolsOpen(!isToolsOpen);
+
   useEffect(() => {
-    const handleStorageChange = () => {
-      // Update userEmail based on the current value in localStorage
+    const handleLogin = () => {
       setUserEmail(localStorage.getItem("userEmail"));
     };
 
-    // Listen for localStorage changes
-    window.addEventListener("storage", handleStorageChange);
+    const handleLogout = () => {
+      setUserEmail(null);
+    };
 
-    // Cleanup the event listener on component unmount
+    window.addEventListener("user-login", handleLogin);
+    window.addEventListener("user-logout", handleLogout);
+
     return () => {
-      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("user-login", handleLogin);
+      window.removeEventListener("user-logout", handleLogout);
     };
   }, []);
 
@@ -27,12 +31,6 @@ export default function Navbar() {
     <nav>
       <img src={nathan} alt="Nathan Logo" />
       <ul>
-        <li>
-          <Link to="/register">Register</Link>
-        </li>
-        <li>
-          <Link to="/login">Log in</Link>
-        </li>
         <li>
           <Link to="/">Home</Link>
         </li>

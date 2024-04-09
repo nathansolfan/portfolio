@@ -22,6 +22,7 @@ export default function Login() {
         // Ensure the server response includes 'userId' and 'email'
         localStorage.setItem("userId", data.userId);
         localStorage.setItem("userEmail", data.email);
+        window.dispatchEvent(new CustomEvent("user-login"));
 
         navigate("/");
       } else {

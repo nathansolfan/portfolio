@@ -33,7 +33,10 @@ exports.login = async (req, res) => {
     );
     if (users.length > 0) {
       const user = users[0];
-      if (password === user.password) {
+
+      const match = await bcrypt.compare(password, user.password);
+
+      if (match) {
         // Respond with user information when login is successful
         res.json({
           message: "Login successful",
