@@ -23,35 +23,43 @@ export default function Navbar() {
         <li>
           <Link to="/login">Log in</Link>
         </li>
-        <li>
-          <Link to="/logout">Logout</Link>
-        </li>
-        <li>
-          <Link to="/donate">Donate</Link>
-        </li>
-        <li>
-          <Link to="/Feedback">Feedback</Link>
-        </li>
-        <li
-          onClick={toggleTools}
-          className="tools-dropdown"
-          style={{ cursor: "pointer" }}
-        >
-          Tools
-          {isToolsOpen && (
-            <ul className="tools-dropdown-menu">
-              <li>
-                <Link to="/ticktacktoe">TicTacToe</Link>
-              </li>
-              <li>
-                <Link to="/calculator">Calculator</Link>
-              </li>
-              <li>
-                <Link to="/Color">Palete</Link>
-              </li>
-            </ul>
-          )}
-        </li>
+        {userEmail ? (
+          <>
+            <li>
+              <Link to="/logout">Logout</Link>
+            </li>
+            <li>
+              <Link to="/donate">Donate</Link>
+            </li>
+            <li>
+              <Link to="/Feedback">Feedback</Link>
+            </li>
+            <li
+              onClick={toggleTools}
+              className="tools-dropdown"
+              style={{ cursor: "pointer" }}
+            >
+              Tools
+              {isToolsOpen && (
+                <ul className="tools-dropdown-menu">
+                  <li>
+                    <Link to="/ticktacktoe">TicTacToe</Link>
+                  </li>
+                  <li>
+                    <Link to="/calculator">Calculator</Link>
+                  </li>
+                  <li>
+                    <Link to="/Color">Palete</Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+          </>
+        ) : (
+          <li>
+            <Link to="/login">Log in</Link>
+          </li>
+        )}
       </ul>
     </nav>
   );

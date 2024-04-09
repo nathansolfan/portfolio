@@ -34,12 +34,96 @@ body {
   overflow-x: hidden;
 }
 
+/* USER INFO */
+.user-info {
+  display: flex;
+  align-items: flex-end;
+  /* Additional styling */
+}
+
+.user-icon {
+  width: 24px; /* Adjust based on your preference */
+  height: 24px;
+  margin-right: 10px;
+}
+
+.user-email {
+  font-size: 0.9rem;
+  color: #ddd; /* Lighter color for a subtler appearance */
+  /* Additional styling */
+}
+
+/* PALETE  */
+.palete-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* END PALETE */
+
+/* HERO */
+.hero-section {
+  margin-top: 10px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  height: 75vh; /* Full height to take up the whole viewport */
+  perspective: 800px;
+  
+}
+
+.content-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: var(--padding-base);
+  border-radius: var(--border-radius-base);
+  background-color: var(--background-light); /* Make sure you define this color in :root */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 2.5px solid rgba(0, 0, 0, 0.1);
+  /* transform: rotateX(45deg);
+  transition: all 3s ease; */
+}  
+
+.hero-items {
+  text-align: center;
+}
+
+.hero-items h1 {
+  font-size: 64px; 
+}
+
+.hero-items p {
+  font-size: 32px;
+}
+
+.hero-items button {
+  border-radius: var(--border-radius-base);
+  background-color: #fc981c;
+  cursor: pointer;
+}
+
+.content-overlay img {
+  max-width: 50%;
+  height: auto;
+  border-radius: var(--border-radius-base);
+  align-self: flex-end;
+  filter: grayscale(90%);
+  transition: transform 0.75s ease;
+}
+.content-overlay img:hover {
+  filter: none;
+  transform: scale(1.025);  
+}
+/* HERO END */
+
 /* CUBE */
 .cube-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75vh; /* Adjust the height as needed */
+  height: 50vh;
 }
 
 .cube {  
@@ -88,93 +172,6 @@ body {
 }
 /* CUBE END  */
 
-
-/* USER INFO */
-.user-info {
-  display: flex;
-  align-items: flex-end;
-  /* Additional styling */
-}
-
-.user-icon {
-  width: 24px; /* Adjust based on your preference */
-  height: 24px;
-  margin-right: 10px;
-}
-
-.user-email {
-  font-size: 0.9rem;
-  color: #ddd; /* Lighter color for a subtler appearance */
-  /* Additional styling */
-}
-
-
-/* PALETE  */
-.palete-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-/* END PALETE */
-
-/* HERO */
-.hero-section {
-  margin-top: 10px;
-  margin-bottom: 60px;
-  display: flex;
-  justify-content: center;
-  height: 75vh; /* Full height to take up the whole viewport */
-  border: 3px solid;
-  perspective: 800px;
-}
-
-.content-overlay {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: var(--padding-base);
-  border-radius: var(--border-radius-base);
-  background-color: var(--background-light); /* Make sure you define this color in :root */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.2);
-  border: 2.5px solid rgba(0, 0, 0, 0.1);
-  /* transform: rotateX(45deg);
-  transition: all 3s ease; */
-
-}
-  
-
-.hero-items {
-  text-align: center;
-}
-
-.hero-items h1 {
-  font-size: 64px; 
-}
-
-.hero-items p {
-  font-size: 32px;
-}
-
-.hero-items button {
-  border-radius: var(--border-radius-base);
-  background-color: #fc981c;
-  cursor: pointer;
-}
-
-.content-overlay img {
-  max-width: 50%;
-  height: auto;
-  border-radius: var(--border-radius-base);
-  align-self: flex-end;
-}
-.content-overlay img:hover {
-  filter: grayscale(90%);
-}
-
-
-/* HERO END */
-
 /* LOGOS */
 .skills {
   display: flex;
@@ -184,8 +181,9 @@ body {
   box-sizing: border-box;
   margin-bottom: 60px;
   align-items: center;
-  height: 75vh;
+  height: 100vh;
   perspective: 800px;
+  scroll-snap-type: y proximity;
 
 }
 
@@ -201,6 +199,8 @@ body {
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 3s ease, transform 3s ease;
+
+  scroll-snap-align: end;
 
 }
 .img-box{
@@ -292,7 +292,11 @@ body {
 /* END HERO */
 
 /* HOME CONTAINER */
+
 .home-container {
+  height: 50vh;
+}
+.home-box-container {
   display: flex;
   align-items: center;
   flex-direction: column; 
@@ -304,6 +308,8 @@ body {
   background-color: var(--background-light);
   padding-top: 10px;
   margin-bottom: 40px;
+  /* height: 75vh; */ 
+  
 }
 .home-title {
   font-size: 2.5rem; /* Adjust font size to suit your design */

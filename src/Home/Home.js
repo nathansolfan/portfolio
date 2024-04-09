@@ -66,10 +66,10 @@ export default function Home() {
   }, [isDragging]); // Re-run the effect only if isDragging changes
 
   return (
-    <div>
+    <div className="home-container">
       <div
         ref={containerRef}
-        className="home-container"
+        className="home-box-container"
         style={{ backgroundColor: getBackgroundColor(), position: "relative" }}
       >
         <h1 className="home-title">What is to know about me?</h1>
