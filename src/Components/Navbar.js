@@ -28,6 +28,12 @@ export default function Navbar() {
       <img src={nathan} alt="Nathan Logo" />
       <ul>
         <li>
+          <Link to="/register">Register</Link>
+        </li>
+        <li>
+          <Link to="/login">Log in</Link>
+        </li>
+        <li>
           <Link to="/">Home</Link>
         </li>
         {!userEmail && (

@@ -3,12 +3,14 @@ const bcrypt = require("bcrypt");
 
 exports.register = async (req, res) => {
   const { email, password } = req.body;
+  const saltRounds = 10; // This is the cost factor for hashing
 
   try {
-    // Insert email and plaintext password directly into the database
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+
     const [result] = await db.execute(
       "INSERT INTO new_table (email, password) VALUES (?, ?)",
-      [email, password]
+      [email, hashedPassword]
     );
 
     res.json({

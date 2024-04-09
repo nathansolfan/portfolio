@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 import "../index.css";
 
 export default function Register() {
-  const navigate = useNavigate();
-
   const handleRegistration = async (email, password) => {
     try {
       const response = await fetch("http://localhost:3001/api/register", {
