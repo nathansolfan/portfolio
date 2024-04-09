@@ -102,6 +102,27 @@ exports.users = async (req, res) => {
   }
 };
 
+exports.changeEmail = async (req, res) => {
+  const { userId } = req.params;
+  const { email } = req.body;
+
+  try {
+    const [result] = await db.execute(
+      "UPDATE new_table SET email = ? WHERE id = ?",
+      [email]
+    );
+
+    if (result.affectedRows > 0) {
+      res.json({ message: "Email updated successfully man" });
+    } else {
+      res.status(404).json({ message: "User not found" });
+    }
+  } catch (error) {
+    console.error("Error updating", error);
+    res.status(500).json({ message: "Server error", error });
+  }
+};
+
 exports.feedback = async (req, res) => {
   const { name, email, message } = req.body;
 
