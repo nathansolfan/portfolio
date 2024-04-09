@@ -125,6 +125,8 @@ body {
   display: flex;
   justify-content: center;
   height: 75vh; /* Full height to take up the whole viewport */
+  border: 3px solid;
+  perspective: 800px;
 }
 
 .content-overlay {
@@ -135,7 +137,12 @@ body {
   border-radius: var(--border-radius-base);
   background-color: var(--background-light); /* Make sure you define this color in :root */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.2);
-  border: 2.5px solid rgba(0, 0, 0, 0.1);}
+  border: 2.5px solid rgba(0, 0, 0, 0.1);
+  /* transform: rotateX(45deg);
+  transition: all 3s ease; */
+
+}
+  
 
 .hero-items {
   text-align: center;
@@ -161,6 +168,10 @@ body {
   border-radius: var(--border-radius-base);
   align-self: flex-end;
 }
+.content-overlay img:hover {
+  filter: grayscale(90%);
+}
+
 
 /* HERO END */
 
@@ -170,6 +181,12 @@ body {
   justify-content: center; /* Center the inner boxes horizontally */
   flex-wrap: wrap; /* Allow the boxes to wrap on smaller screens */
   gap: 20px; /* Add some space between the inner boxes */
+  box-sizing: border-box;
+  margin-bottom: 60px;
+  align-items: center;
+  height: 75vh;
+  perspective: 800px;
+
 }
 
 .skills-container {
@@ -180,10 +197,11 @@ body {
   padding: 20px; /* Add some padding inside each box */
   max-width: 28.5%; /* Set a max width for each inner box */
   box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optional: Add a subtle shadow for depth */
-
+  
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 3s ease, transform 3s ease;
+
 }
 .img-box{
   background-color:#fcb900;
@@ -213,10 +231,12 @@ body {
   /* img effect */
   transition: transform 0.75s ease; /* Smooth transition for the transform property */
   
+  
 
 }
 .skills-container img:hover {
   transform: scale(0.85); /* Scale the image up to 105% of its original size on hover */
+ 
 }
 
 .login-container {
