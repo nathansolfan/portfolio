@@ -57,6 +57,18 @@ export default function Account() {
     }
   };
 
+  const handleDeleteAccount = async () => {
+    const userId = localStorage.getItem("userId");
+
+    if (window.confirm("Are you sure?")) {
+      try {
+        const response = await fetch(
+          `http://localhost:3001/api/user/${userId}/delete`
+        );
+      } catch (error) {}
+    }
+  };
+
   return (
     <div>
       <h1>Account details</h1>
@@ -74,6 +86,7 @@ export default function Account() {
             />
             <button type="submit">Change Email</button>
           </form>
+          <button onClick={handleDeleteAccount}>Delete Account</button>
           {message && <p>{message}</p>}
         </div>
       )}
