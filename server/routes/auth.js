@@ -12,5 +12,6 @@ router.get("/user/:id", userController.userId);
 router.post("/user/:userId/email", userController.changeEmail);
 
 router.get("/users", userController.users);
+router.delete("/users:userId/delete", userController.deleteUser);
 
 module.exports = router;
