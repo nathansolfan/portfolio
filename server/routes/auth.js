@@ -9,6 +9,8 @@ router.post("/login", userController.login);
 router.post("/update", userController.update);
 router.post("/feedback", userController.feedback);
 router.get("/user/:id", userController.userId);
+router.post("/user/:userId/email", userController.changeEmail);
+
 router.get("/users", userController.users);
 
 module.exports = router;

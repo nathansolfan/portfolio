@@ -104,12 +104,12 @@ exports.users = async (req, res) => {
 
 exports.changeEmail = async (req, res) => {
   const { userId } = req.params;
-  const { email } = req.body;
+  const { email: newEmail } = req.body;
 
   try {
     const [result] = await db.execute(
       "UPDATE new_table SET email = ? WHERE id = ?",
-      [email]
+      [newEmail, userId]
     );
 
     if (result.affectedRows > 0) {
