@@ -102,6 +102,25 @@ exports.users = async (req, res) => {
   }
 };
 
+exports.deleteUser = async (req, res) => {
+  const { userId } = req.params;
+
+  try {
+    const [result] = await db.execute("DELETE FROM new_table WHERE id = ?", [
+      userId,
+    ]);
+
+    if (result.affectedRows > 0) {
+      res.json({ message: "Account deleted" });
+    } else {
+      res.status(404).json({ message: "User not found." });
+    }
+  } catch (error) {
+    console.error("Error deleting user", error);
+    res.status(500).json({ message: "Server error", error });
+  }
+};
+
 exports.changeEmail = async (req, res) => {
   const { userId } = req.params;
   const { email: newEmail } = req.body;
