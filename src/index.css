@@ -126,16 +126,19 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(105deg, #6ec7f3, #7ac40c);
+  background: linear-gradient(135deg, #6ec7f3 0%, #7ac40c 100%);
  
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 5px auto;
+  border: 1px solid #818080;
+
+
   max-width: 350px;
 }
 
 .react-datepicker {
-  border: 1px solid #818080 !important;
+  border: 2px solid #818080 !important;
   border-radius: 5px !important;
   font-family: Arial, sans-serif !important;
   background-color: #0083b0 !important;
@@ -144,6 +147,8 @@ body {
 .react-datepicker__header {
   background-color: #0077a2 !important;
   border-bottom: 1px solid #006080 !important;
+  font-family: var(--font-primary);
+  
 }
 
 .react-datepicker__current-month,
@@ -151,6 +156,8 @@ body {
 .react-datepicker-year-header {
   color: #ffffff !important;
   font-size: 24px !important; /* Increase font size */
+  
+  
 
 }
 
@@ -162,19 +169,25 @@ body {
   width: 40px !important; /* Increase width */
   height: 40px !important; /* Increase height */
   line-height: 40px !important; /* Adjust line height to vertically center text */
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover effects */
+  font-family: var(--font-primary);
+
+
 }
 
 .react-datepicker__day--selected,
 .react-datepicker__day--in-selecting-range,
 .react-datepicker__day--in-range {
-  background-color: #005f80 !important;
+  background-color: #dd8119 !important;
   color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 255, 255, 0.4); /* Add a more prominent shadow for selected day */
 
 }
 
 .react-datepicker__day--keyboard-selected,
 .react-datepicker__day:hover {
-  background-color: #007ba0 !important;
+  background-color: #dd8119 !important;
   color: #ffffff !important;
   
 }
@@ -182,7 +195,7 @@ body {
 .react-datepicker__navigation--previous,
 .react-datepicker__navigation--next {
   top: 6.5px !important;
-  width: 20px !important;
+  width: 80px !important;
   height: 2px !important;
   border: 10px solid transparent !important;
 }
@@ -202,11 +215,39 @@ body {
 .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
   padding: 0 !important; /* Remove default padding */
   width: auto !important; /* Adjust width as needed */
+  background-color: #0077a2; /* Match the time list background with the header for consistency */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  border-radius: 5px; /* Match the border radius with the date picker for consistency */
+}
+.react-datepicker__time-container {
+  width: 150px !important; /* Adjust this value as needed to increase the width */
+  font-family: var(--font-primary);
+
+  
+}
+
+/* Or, if you need to adjust the inner box specifically */
+.react-datepicker__time-box {
+  width: 150px !important; /* Adjust this value as needed */
 }
 
 .react-datepicker__time-list-item {
   padding: 10px !important; /* Increase padding for larger touch targets */
   font-size: 16px !important; /* Increase font size for better readability */
+  color: #e6ffff !important; /* Light color for contrast */
+  background-color: transparent !important; /* Ensure the background is transparent by default */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.react-datepicker__time-list-item:hover {
+  background-color: #dd8119 !important; /* Darken background on hover for visual feedback */
+  color: #ffffff !important; /* Ensure text color is white for readability */
+}
+
+.react-datepicker__time-list-item--selected {
+  background-color: #004f6e !important; /* Even darker background for the selected item */
+  color: #ffffff !important; /* Ensure selected item text color is white for contrast */
+  font-weight: bold; /* Make the selected time more prominent */
 }
 
 
