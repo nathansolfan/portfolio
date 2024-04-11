@@ -42,6 +42,9 @@ export default function Navbar() {
             <li>
               <Link to="/login">Log in</Link>
             </li>
+            <li>
+              <Link to="/car">Car</Link>
+            </li>
           </>
         )}
         {userEmail && (

@@ -15,6 +15,7 @@ import ColorPalete from "./Components/ColorPalete";
 import ParallaxTest from "./Components/Parallax";
 import NotFound from "./Components/NotFound";
 import Account from "./Components/Account";
+import Car from "./Components/Car/Car";
 
 function App() {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
@@ -74,11 +75,12 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/account" element={<Account />} />
           <Route path="/calculator" element={<Calculator />} />
-          <Route path="/Ticktacktoe" element={<Ticktacktoe />} />
-          <Route path="/Donate" element={<Donate />} />
-          <Route path="/Feedback" element={<FeedbackForm />} />
-          <Route path="/Color" element={<ColorPalete />} />
+          <Route path="/ticktacktoe" element={<Ticktacktoe />} />
+          <Route path="/donate" element={<Donate />} />
+          <Route path="/feedback" element={<FeedbackForm />} />
+          <Route path="/color" element={<ColorPalete />} />
           <Route path="/parallax" element={<ParallaxTest />} />
+          <Route path="/car" element={<Car />} />
         </Routes>
       </div>
     </Router>
