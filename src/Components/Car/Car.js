@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
+import Modal from "react-modal";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "../../index.css";
