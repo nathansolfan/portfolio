@@ -12,7 +12,7 @@ export default function Car() {
         onChange={(date) => setStartDate(date)}
         showTimeSelect // This enables time selection
         timeFormat="HH:mm"
-        timeIntervals={15}
+        timeIntervals={60}
         timeCaption="time"
         dateFormat="MMMM d, yyyy h:mm aa"
         className="datepicker"
