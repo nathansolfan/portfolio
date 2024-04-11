@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css"; // Don't forget to import the CSS file
+
+import "react-datepicker/dist/react-datepicker.css";
+import "../../index.css";
 
 export default function Car() {
   const [startDate, setStartDate] = useState(new Date());
   return (
-    <div>
+    <div className="datepicker-container">
       <h2>Select a Date and Time</h2>
       <DatePicker
         selected={startDate}

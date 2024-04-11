@@ -121,7 +121,15 @@ body {
 }
 /* HERO END */
 
+.datepicker-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* CUBE */
+
 .cube-container {
   display: flex;
   justify-content: center;
