@@ -15,7 +15,7 @@ export default function BookingForm({ onSubmit }) {
       <div>
         <label>Name:</label>
         <input
-          type="text"
+          type="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -33,13 +33,13 @@ export default function BookingForm({ onSubmit }) {
       <div>
         <label>Phone:</label>
         <input
-          type="tel"
+          type="phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           required
         />
       </div>
-      <button type="submit">Confirm Booking</button>
+      <button type="submit">Confirm Bookingg</button>
     </form>
   );
 }
