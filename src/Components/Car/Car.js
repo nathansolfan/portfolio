@@ -40,6 +40,8 @@ export default function Car() {
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
         contentLabel="Booking Form"
+        className="custom-modal"
+        overlayClassName="custom-overlay"
       >
         <Form onSubmit={handleFormSubmit} />
       </Modal>
