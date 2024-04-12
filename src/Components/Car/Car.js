@@ -21,6 +21,9 @@ export default function Car() {
   const handleFormSubmit = (formData) => {
     setIsModalOpen(false);
     console.log("Booking Details:", { ...formData, startDate });
+    alert(
+      "Thank you for your booking. You will receive a confirmation email shortly."
+    );
   };
 
   return (
