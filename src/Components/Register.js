@@ -18,8 +18,7 @@ export default function Register() {
         throw new Error("Network response was not ok");
       }
 
-      // Assuming the server's response is plain text
-      const data = await response.json();
+      const data = await response.json(); // Assuming JSON response
       console.log(data.message);
       alert(data.message);
     } catch (error) {
@@ -29,7 +28,7 @@ export default function Register() {
 
   return (
     <div className="register-container">
-      <h2>Register</h2>
+      <h2>Create Your Account</h2>
       <Form onSubmit={handleRegistration} />
     </div>
   );

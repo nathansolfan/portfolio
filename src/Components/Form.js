@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 
-export default function Form({ onSubmit }) {
+export default function Form({ formType, onSubmit }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
+  const isRegister = formType === "register";
+  const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(name, email, password);
+    if (isRegister) {
+      onSubmit(name, email, password);
+    } else {
+      onSubmit(email, password);
+    }
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <label className="label">Name:</label>
@@ -33,7 +37,7 @@ export default function Form({ onSubmit }) {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type="submit">Submit</button>
+      <button type="submit">{isRegister ? "Register" : "Login"}</button>
     </form>
   );
 }
