@@ -156,3 +156,19 @@ exports.feedback = async (req, res) => {
     res.status(500).json({ message: "Server error", error });
   }
 };
+exports.bookings = async (req, res) => {
+  const { name, email, phone } = req.body;
+
+  try {
+    const result = await db.execute(
+      "INSERT INTO bookings (name, email, phone) VALUES (?, ? ,?)",
+      [name, email, phone]
+    );
+    res
+      .status(201)
+      .json({ message: "Booking done ok", bookingId: result.insertId });
+  } catch (error) {
+    console.error("Booking creation failed", error);
+    res.status(500).json({ message: "Failed to create booking", error });
+  }
+};
