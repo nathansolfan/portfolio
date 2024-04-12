@@ -157,6 +157,8 @@ exports.feedback = async (req, res) => {
   }
 };
 exports.bookings = async (req, res) => {
+  console.log("Received booking request", req.body);
+
   const { name, email, phone } = req.body;
 
   try {

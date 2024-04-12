@@ -6,9 +6,25 @@ export default function BookingForm({ onSubmit }) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmit({ name, email, phone });
+
+    try {
+      const response = await fetch("http://localhost:3001/api/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, phone }),
+      });
+
+      const data = await response.json();
+      console.log(data);
+      alert("Booking confirmed");
+    } catch (error) {
+      console.error("Error to submit booking", error);
+      alert("Failed to confirm booking");
+    }
   };
 
   return (
