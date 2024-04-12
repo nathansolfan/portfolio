@@ -424,8 +424,21 @@ body {
 /* HOME CONTAINER */
 
 .home-container {
-  height: 50vh;
+  height: 100%; /* Changed to 100% to not limit to 50vh */
+  display: flex;
+  flex-direction: column;
 }
+.full-height-section {
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  background-color: #333; /* Neutral background */
+  margin-bottom: 1rem;
+}
+
 .home-box-container {
   display: flex;
   align-items: center;
@@ -459,6 +472,10 @@ body {
   text-align: justify;/* Justify the text for a neat look */
 }
 
+.home-box-container {
+  position: relative;
+}
+
 .draggable-circle {
   width: 35px;
   height: 35px;
@@ -470,6 +487,15 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interaction */
   overflow-x: auto; /* Allows horizontal scrolling if needed */
 }
+
+#page1 {
+  background-color: #007BFF; /* Blue */
+}
+
+#page2 {
+  background-color: #28A745; /* Green */
+}
+
 /* END HOME CONTAINER */
 
 /* NOT FOUND */

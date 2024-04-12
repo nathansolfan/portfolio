@@ -67,44 +67,53 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      <div
-        ref={containerRef}
-        className="home-box-container"
-        style={{ backgroundColor: getBackgroundColor(), position: "relative" }}
-      >
-        <h1 className="home-title">What is to know about me?</h1>
-        <p className="home-paragraph">
-          I have a strong foundation in front-end and back-end development, with
-          a keen eye for creating responsive and visually appealing web designs.
-          My journey in the world of web development are hosted on GitHub. One
-          of my primary areas of focus is building web applications using React
-          progressing to NextJS and integrating them with robust databases,
-          particularly MongoDB or Postman Also PHP using MySQL which acts
-          similar to MongoDB. This allows me to create dynamic, data-driven
-          solutions that meet the unique needs of businesses and users alike.
-        </p>
-        {/* Draggable circle */}
+      <section id="page1" className="full-height-section">
         <div
-          className="draggable-circle"
+          ref={containerRef}
+          className="home-box-container"
           style={{
-            left: `${position.x}%`,
-            top: `${position.y}%`,
-            cursor: isDragging ? "grabbing" : "grab", // Changes cursor based on drag state
+            backgroundColor: getBackgroundColor(),
+            position: "relative",
           }}
-          onMouseDown={startDrag}
-        />
-        <div style={{ height: "100px" }}>{/* Additional content */}</div>
-      </div>
-      <div className="cube-container">
-        <div className="cube">
-          <div className="front-side"></div>
-          <div className="back-side"></div>
-          <div className="right-side"></div>
-          <div className="left-side"></div>
-          <div className="top-side"></div>
-          <div className="bottom-side"></div>
+        >
+          <h1 className="home-title">What is to know about me?</h1>
+          <p className="home-paragraph">
+            I have a strong foundation in front-end and back-end development,
+            with a keen eye for creating responsive and visually appealing web
+            designs. My journey in the world of web development are hosted on
+            GitHub. One of my primary areas of focus is building web
+            applications using React progressing to NextJS and integrating them
+            with robust databases, particularly MongoDB or Postman Also PHP
+            using MySQL which acts similar to MongoDB. This allows me to create
+            dynamic, data-driven solutions that meet the unique needs of
+            businesses and users alike.
+          </p>
+          {/* Draggable circle */}
+          <div
+            className="draggable-circle"
+            style={{
+              left: `${position.x}%`,
+              top: `${position.y}%`,
+              cursor: isDragging ? "grabbing" : "grab", // Changes cursor based on drag state
+            }}
+            onMouseDown={startDrag}
+          />
+          <div style={{ height: "100px" }}>{/* Additional content */}</div>
         </div>
-      </div>
+      </section>
+
+      <section id="page2" className="full-height-section">
+        <div className="cube-container">
+          <div className="cube">
+            <div className="front-side"></div>
+            <div className="back-side"></div>
+            <div className="right-side"></div>
+            <div className="left-side"></div>
+            <div className="top-side"></div>
+            <div className="bottom-side"></div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
