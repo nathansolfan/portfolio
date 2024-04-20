@@ -29,7 +29,7 @@ export default function Register() {
   return (
     <div className="register-container">
       <h2>Create Your Account</h2>
-      <Form onSubmit={handleRegistration} />
+      <Form formType="register" onSubmit={handleRegistration} />
     </div>
   );
 }

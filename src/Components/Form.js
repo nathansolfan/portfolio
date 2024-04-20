@@ -15,29 +15,37 @@ export default function Form({ formType, onSubmit }) {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <label className="label">Name:</label>
+    <form className="form-container" onSubmit={handleSubmit}>
+      <label className="label"></label>
       <input
+        id="name"
         type="text"
         required
         value={name}
         onChange={(e) => setName(e.target.value)}
+        placeholder=" Name"
       />
-      <label className="label">Email:</label>
+      <label className="label"></label>
       <input
+        id="email"
         type="text"
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        placeholder=" Email address"
       />
-      <label className="label">Password:</label>
+      <label className="label"></label>
       <input
+        id="password"
         type="password" // Changed to 'password' to hide input
         required
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        placeholder=" Password"
       />
-      <button type="submit">{isRegister ? "Register" : "Login"}</button>
+      <button className="submit-button" type="submit">
+        {isRegister ? "Register" : "Login"}
+      </button>
     </form>
   );
 }
